@@ -1,4 +1,5 @@
 <?php
+header("Content-type:text/html; charset=utf-8");
 
 /**
  * 武器接口
@@ -6,7 +7,7 @@
  *
  */
 interface Weapon {
-	static public function getinfo();
+	public function getinfo();
 }
 
 /**
@@ -43,5 +44,9 @@ class Soldier {
 	}
 }
 
-$soldier = new Soldier(new AK47());
+$soldier = new Soldier(new AK47()); //构造注入
 $soldier->show_weapon_info();
+echo "<br>";
+$soldier = new Soldier(new AR15());
+$soldier->show_weapon_info();
+
