@@ -1,0 +1,32 @@
+# 
+# 数据表的结构 'menu_v1' 
+# 
+
+CREATE TABLE menu_v1 ( 
+menu_id int(11) NOT NULL auto_increment, 
+menu varchar(20) NOT NULL, 
+menu_grade int(11) NOT NULL, 
+menu_superior int(11) NOT NULL, 
+UNIQUE menu_id (menu_id) 
+); 
+
+# 
+# 导出下面的数据库内容 'menu_v1' 
+# 
+
+INSERT INTO menu_v1 VALUES( '1', '计算机', '1', '0'); 
+INSERT INTO menu_v1 VALUES( '2', '编程', '2', '1'); 
+INSERT INTO menu_v1 VALUES( '3', '网络', '2', '1'); 
+INSERT INTO menu_v1 VALUES( '4', 'PHP与MySql', '3', '2'); 
+INSERT INTO menu_v1 VALUES( '5', 'C语言', '3', '2'); 
+INSERT INTO menu_v1 VALUES( '6', '网页制作', '3', '3'); 
+INSERT INTO menu_v1 VALUES( '7', 'TCP、IP协议', '3', '3'); 
+INSERT INTO menu_v1 VALUES( '8', '数学', '1', '0'); 
+INSERT INTO menu_v1 VALUES( '9', '高等数学', '2', '8'); 
+INSERT INTO menu_v1 VALUES( '10', '线性代数', '3', '9'); 
+INSERT INTO menu_v1 VALUES( '11', '离散数学', '3', '9'); 
+INSERT INTO menu_v1 VALUES( '12', '初等数学', '2', '8'); 
+INSERT INTO menu_v1 VALUES( '13', '文学', '1', '0'); 
+INSERT INTO menu_v1 VALUES( '14', '中国文学', '2', '13'); 
+INSERT INTO menu_v1 VALUES( '15', 'php', '4', '4'); 
+INSERT INTO menu_v1 VALUES( '16', 'mysql', '4', '4'); 
