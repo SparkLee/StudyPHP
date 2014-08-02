@@ -28,6 +28,6 @@ echo "\n"; // 获取所有已注册的 __autoload() 函数。
 
 try {
     $p = new Person();
-} catch ( Exception $e ) {
+} catch (Exception $e) {
     echo $e->getMessage();
 }
