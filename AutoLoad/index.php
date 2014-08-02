@@ -16,7 +16,8 @@
 // spl_autoload_register(); // 如果没有提供任何参数，则自动注册autoload的默认实现函数spl_autoload()。
 spl_autoload_register("my_autoload");
 
-function my_autoload($class_name) {
+function my_autoload($class_name)
+{
     require_once "{$class_name}.php";
 }
 // spl_autoload_unregister("my_autoload");
