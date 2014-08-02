@@ -44,9 +44,30 @@ class Soldier {
 	}
 }
 
-$soldier = new Soldier(new AK47()); //构造注入
+/**
+ * 武器工厂
+ * @author admin
+ *
+ */
+class WeaponFactory {
+  public function get_weapon($weapon_type) {
+    switch ($weapon_type) {
+      case "AK47":
+        return new AK47();
+        break;
+      case "AR15":
+        return new AR15();
+        break;
+      default:
+        return null;
+    }
+  }
+}
+
+$weapon_factory = new WeaponFactory();
+$soldier = new Soldier($weapon_factory->get_weapon("AK47")); //构造注入
 $soldier->show_weapon_info();
 echo "<br>";
-$soldier = new Soldier(new AR15());
+$soldier = new Soldier($weapon_factory->get_weapon("AR15"));
 $soldier->show_weapon_info();
 
