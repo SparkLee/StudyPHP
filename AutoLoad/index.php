@@ -17,7 +17,7 @@
 spl_autoload_register("my_autoload");
 
 function my_autoload($class_name) {
-  require_once "{$class_name}.php";
+    require_once "{$class_name}.php";
 }
 // spl_autoload_unregister("my_autoload");
 
@@ -26,7 +26,7 @@ var_dump(spl_autoload_functions());
 echo "\n"; // 获取所有已注册的 __autoload() 函数。
 
 try {
-  $p = new Person();
+    $p = new Person();
 } catch ( Exception $e ) {
-  echo $e->getMessage();
+    echo $e->getMessage();
 }
