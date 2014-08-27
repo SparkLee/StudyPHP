@@ -28,34 +28,34 @@ class MyIterator implements Iterator
     public function current()
     {
         $var = current($this->var);
-        echo "current:$var\n";
+        echo "当前元素值为:$var\n";
         return $var;
     }
 
     public function next()
     {
         $var = next($this->var);
-        echo "next:$var\n";
+        echo "下个元素的值为:$var\n";
         return $var;
     }
 
     public function key()
     {
         $var = key($this->var);
-        echo "key:$var\n";
+        echo "当前元素指针为:$var\n";
         return $var;
     }
 
     public function valid()
     {
         $var = $this->current() !== false;
-        echo "valid:$var\n";
+        echo "当前元素是否存在:$var\n";
         return $var;
     }
 
     public function rewind()
     {
-        echo "rewinding\n";
+        echo "将数组指针移到第一个元素处\n";
         reset($this->var);
     }
 }
@@ -68,6 +68,6 @@ $values = array(
 );
 $it = new MyIterator($values);
 foreach ($it as $k => $v) {
-    echo "$k: $v\n\n";
+    echo "$k->$v\n";
 }
 // var_dump($it);

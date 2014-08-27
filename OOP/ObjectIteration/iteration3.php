@@ -12,6 +12,8 @@
  * @author admin
  *        
  */
+
+include('iteration2.php');
 class MyCollection implements IteratorAggregate
 {
 
@@ -30,7 +32,7 @@ class MyCollection implements IteratorAggregate
     }
 }
 
-echo "\n<br>hExample #3 通过实现 IteratorAggregate 来遍历对象：\n";
+echo "\nExample #3 通过实现 IteratorAggregate 来遍历对象：\n";
 $coll = new MyCollection();
 $coll->add("value001");
 $coll->add("value002");
