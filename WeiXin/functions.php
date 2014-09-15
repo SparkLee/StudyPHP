@@ -49,3 +49,27 @@ function getOpenIDs()
     $openids = $result_arr['data']['openid'];
     return $openids;
 }
+
+/**
+ * 给指定用户[指定用户OpenID]发送模板消息
+ * 参考：https://mp.weixin.qq.com/advanced/tmplmsg?action=faq&token=1364299427&lang=zh_CN
+ * 
+ */
+function sendTemplateMsg() {
+    global $access_token;
+    
+    $post_data = array(
+        
+    );
+    $post_data_json = "&json=" . json_encode($post_data) . "&";
+    
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={$access_token}");
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data_json);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    $result = curl_exec($ch);
+    curl_close($ch);
+    return $result;
+}
