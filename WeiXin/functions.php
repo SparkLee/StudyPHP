@@ -45,5 +45,7 @@ function getOpenIDs()
     curl_setopt($ch, CURLOPT_HEADER, 0);
     $result = curl_exec($ch);
     curl_close($ch);
-    return $result;
+    $result_arr = json_decode($result, true);
+    $openids = $result_arr['data']['openid'];
+    return $openids;
 }
