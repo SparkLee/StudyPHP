@@ -15,7 +15,7 @@ $access_token = getAccessToken();
 */
 function getAccessToken()
 {
-    return "UgqJhbodDeDctMLWiPNW8HsdO_mcXm1et4uukTaMt-a6URQR5hhy2tj3L5ky1EGzE4K5Pc5oAMwd59aDKdqesA";
+    return "LPU5uT3fv7L-Z4ZzTpgV9PVthwIUKbiZas6jIVMuw7SuJRAKSofS8SeLp5NuEb9gnXSn23aUiQdwv-SHv5Xb_A";
     $appid = AppId;
     $appsecret = AppSecret;
     $ch = curl_init(); // 创建一个cURL资源
@@ -54,21 +54,31 @@ function getOpenIDs()
  * 给指定用户[指定用户OpenID]发送模板消息
  * 参考：https://mp.weixin.qq.com/advanced/tmplmsg?action=faq&token=1364299427&lang=zh_CN
  * 
+ * @param unknown $openid 用户OpenID
+ * @param unknown $template_id 模板ID
+ * @param unknown $url 处理微信公众平台返回数据的第三方平台URL
+ * @param unknown $topcolor 
+ * @param unknown $data 传递给模板的参数值
+ * @return mixed
  */
-function sendTemplateMsg() {
+function sendTemplateMsg($openid, $template_id, $url, $topcolor, $data) {
     global $access_token;
     
     $post_data = array(
-        
+        'touser' => $openid,
+        'template_id' => $template_id,
+        'url' => $url,
+        'topcolor' => $topcolor,
+        'data' => $data
     );
-    $post_data_json = "&json=" . json_encode($post_data) . "&";
+    $post_data_json = json_encode($post_data);
     
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={$access_token}");
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data_json);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_HEADER, 0);
+    curl_setopt($ch, CURLOPT_HEADER, array('Content-Type: application/json', 'Content-Length: ' . strlen($post_data_json)));
     $result = curl_exec($ch);
     curl_close($ch);
     return $result;

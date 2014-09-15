@@ -1,8 +1,8 @@
 <?php 
 define("TOKEN", "weixin"); //定义自已的微信Token
 
-define("AppId", "wxf7a1023701b6c62d"); //用于获取$access_token
-define("AppSecret", "81efb9e7f0dc8fe7761394bbae216c25"); //用于获取$access_token
+define("AppId", "wx20b2d5fd1f45bb08"); //用于获取$access_token
+define("AppSecret", "921860766b25417045f3235219c5378c"); //用于获取$access_token
 
 
 ?>
