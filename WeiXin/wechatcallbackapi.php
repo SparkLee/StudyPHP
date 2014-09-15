@@ -5,7 +5,7 @@
   * 官方提供PHP示例代码：http://mp.weixin.qq.com/wiki/index.php?title=%E6%B6%88%E6%81%AF%E6%8E%A5%E5%8F%A3%E6%8C%87%E5%8D%97#.E7.A4.BA.E4.BE.8B.E4.BB.A3.E7.A0.81
   */
 
-define("TOKEN", "weixin"); //
+include('config.php');
 $wechatObj = new wechatCallbackapi();
 $wechatObj->valid();
 
