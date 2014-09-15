@@ -1,4 +1,9 @@
 <?php
+/**
+ * 参考1：如何给post请求传递json数据-http://cn2.php.net/manual/en/function.curl-setopt.php
+ * 参考2：使用php的curl给post请求传递json数据-http://bbs.csdn.net/topics/390273161
+ */
+
 // 创建一个cURL资源
 $ch = curl_init();
 
