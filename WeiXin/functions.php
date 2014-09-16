@@ -15,7 +15,7 @@ $access_token = getAccessToken();
 */
 function getAccessToken()
 {
-    return "LPU5uT3fv7L-Z4ZzTpgV9PVthwIUKbiZas6jIVMuw7SuJRAKSofS8SeLp5NuEb9gnXSn23aUiQdwv-SHv5Xb_A";
+    return "ARUyhlJ80gEWp30bHdIRYXYTtWtYBW0nJPiU0cdg4UwNpnUelPlNUVUN99FZoPLjHVEO9qHaFIXvKNcW6SU4iQ";
     $appid = AppId;
     $appsecret = AppSecret;
     $ch = curl_init(); // 创建一个cURL资源
@@ -51,6 +51,173 @@ function getOpenIDs()
 }
 
 /**
+ * 查询所有用户分组
+ * @return mixed|unknown
+ */
+function getGroups() {
+    global $access_token;
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, "https://api.weixin.qq.com/cgi-bin/groups/get?access_token={$access_token}");
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    $result = curl_exec($ch);
+    curl_close($ch);
+    $result_arr = json_decode($result, true);
+    return $result_arr;
+}
+
+/**
+ * 根据分组名称获取分组ID
+ * @param unknown $group_name
+ */
+function getGroupID($group_name) {
+    $groups = getGroups();
+    foreach ($groups['groups'] as $group) {
+        if ($group['name'] == $group_name) {
+            return $group['id'];
+        }
+    }
+}
+
+/**
+ * 查询用户所在分组的ID
+ * 参考：微信公众平台开发文档/分组管理接口->http://mp.weixin.qq.com/wiki/index.php?title=%E5%88%86%E7%BB%84%E7%AE%A1%E7%90%86%E6%8E%A5%E5%8F%A3
+ * @param unknown $openid
+ * @return mixed
+ */
+function getUserGroupID($openid) {
+    global $access_token;    
+    $post_data = array(
+        'openid' => $openid
+    );
+    $post_data_json = json_encode($post_data);    
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, "https://api.weixin.qq.com/cgi-bin/groups/getid?access_token={$access_token}");
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data_json);    
+    curl_setopt($ch, CURLOPT_HEADER, array('Content-Type: application/json', 'Content-Length: ' . strlen($post_data_json)));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $result = curl_exec($ch);
+    curl_close($ch);
+    return $result;
+}
+
+/**
+ * 获取用户基本信息
+ * 参考：微信公众平台开发文档/获取用户基本信息(UnionID机制)->http://mp.weixin.qq.com/wiki/index.php?title=%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF(UnionID%E6%9C%BA%E5%88%B6)
+ * @param unknown $openid
+ */
+function getUserInfo($openid, $lang = 'zh_CN') {
+    global $access_token;
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, "https://api.weixin.qq.com/cgi-bin/user/info?access_token={$access_token}&openid={$openid}&lang={$lang}");
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    $result = curl_exec($ch);
+    curl_close($ch);
+    $result_arr = json_decode($result, true);
+    return $result_arr;
+}
+
+/**
+ * 获取所有用户的基本信息
+ * @return mixed
+ */
+function getUsersInfo() {
+    $users_info = array();
+    $openids = getOpenIDs(); //获取关注者列表[所有关注用户ID]
+    foreach ($openids as $openid) {
+        $users_info[] = getUserInfo($openid);
+    }
+    return $users_info;
+}
+
+/**
+ * 展示所有用户的基本信息
+ */
+function displayUsersInfo() {
+    $users_info = getUsersInfo();
+    echo "<table style=\"width=\"200\" border=\"1\" cellspacing=\"2\" cellpadding=\"2\"\">";
+    echo "<tr>";
+    echo "<th>序号</th>";
+    echo "<th>是否已关注</th>";
+    echo "<th>用户标识</th>";
+    echo "<th>用户昵称</th>";
+    echo "<th>用户性别</th>";
+    echo "<th>用户语言</th>";
+    echo "<th>所在城市</th>";
+    echo "<th>所在省份</th>";
+    echo "<th>所在国家</th>";
+    echo "<th>关注时间</th>";
+    echo "<th>备注</th>";
+    echo "<th>用户头像</th>";
+    echo "</tr>";
+    $cnt = 1;
+    foreach ($users_info as $user_info) {
+        //var_dump($user_info);
+        $delimiter_index = strrpos($user_info['headimgurl'], '/'); //查找字符串中最后出现指定字符的位置
+        $headimgurl = substr($user_info['headimgurl'], 0, $delimiter_index + 1);
+        echo "<tr>";
+        echo "<td>{$cnt}</td>";
+        echo "<td>{$user_info['subscribe']}</td>";
+        echo "<td>{$user_info['openid']}</td>";
+        echo "<td>{$user_info['nickname']}</td>";
+        echo "<td>{$user_info['sex']}</td>";
+        echo "<td>{$user_info['language']}</td>";
+        echo "<td>{$user_info['city']}</td>";
+        echo "<td>{$user_info['province']}</td>";
+        echo "<td>{$user_info['country']}</td>";
+        echo "<td>{$user_info['subscribe_time']}</td>";
+        echo "<td>{$user_info['remark']}</td>";
+        echo "<td><img src='{$headimgurl}' style='width:48px;height:48px'></td>";
+        echo "</tr>";
+        $cnt++;
+    }
+    echo "</table>";
+}
+
+/**
+ * 查询某个分组中的所有用户
+ * @param unknown $group_name：分组名称
+ */
+function getGroupUsers($group_name) {
+    $users = array();
+    $group_id = getGroupID($group_name); //分组ID
+    $open_ids = getOpenIDs(); //所有关注用户的OpenID
+    foreach ($open_ids as $open_id) {
+        $user_group_id = getUserGroupID($open_id); //用户所在分组的ID
+        if($user_group_id == $group_id) {
+            $users[] = $open_id;
+        }
+    }
+    return $users;
+}
+
+/**
+ * 创建用户分组
+ * @param unknown $group_name：分组名称
+ * @return mixed
+ */
+function createGroup($group_name) {
+    global $access_token;
+    $post_data = array(
+        'group' => array(
+            'name' => $group_name        
+        )
+    );
+    $post_data_json = json_encode($post_data);
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, "https://api.weixin.qq.com/cgi-bin/groups/create?access_token={$access_token}");
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data_json);
+    curl_setopt($ch, CURLOPT_HEADER, array('Content-Type: application/json', 'Content-Length: ' . strlen($post_data_json)));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $result = curl_exec($ch);
+    curl_close($ch);
+    return $result;
+}
+
+/**
  * 给指定用户[指定用户OpenID]发送模板消息
  * 参考：https://mp.weixin.qq.com/advanced/tmplmsg?action=faq&token=1364299427&lang=zh_CN
  * 
@@ -62,8 +229,7 @@ function getOpenIDs()
  * @return mixed
  */
 function sendTemplateMsg($openid, $template_id, $url, $topcolor, $data) {
-    global $access_token;
-    
+    global $access_token;    
     $post_data = array(
         'touser' => $openid,
         'template_id' => $template_id,
@@ -71,14 +237,13 @@ function sendTemplateMsg($openid, $template_id, $url, $topcolor, $data) {
         'topcolor' => $topcolor,
         'data' => $data
     );
-    $post_data_json = json_encode($post_data);
-    
+    $post_data_json = json_encode($post_data);    
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={$access_token}");
     curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data_json);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data_json);    
     curl_setopt($ch, CURLOPT_HEADER, array('Content-Type: application/json', 'Content-Length: ' . strlen($post_data_json)));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $result = curl_exec($ch);
     curl_close($ch);
     return $result;
