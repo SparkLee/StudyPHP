@@ -15,7 +15,7 @@ $access_token = getAccessToken();
 */
 function getAccessToken()
 {
-    return "ARUyhlJ80gEWp30bHdIRYXYTtWtYBW0nJPiU0cdg4UwNpnUelPlNUVUN99FZoPLjHVEO9qHaFIXvKNcW6SU4iQ";
+    //return "ARUyhlJ80gEWp30bHdIRYXYTtWtYBW0nJPiU0cdg4UwNpnUelPlNUVUN99FZoPLjHVEO9qHaFIXvKNcW6SU4iQ";
     $appid = AppId;
     $appsecret = AppSecret;
     $ch = curl_init(); // 创建一个cURL资源
