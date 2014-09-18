@@ -15,7 +15,7 @@ $access_token = getAccessToken();
 */
 function getAccessToken()
 {
-    //return "ARUyhlJ80gEWp30bHdIRYXYTtWtYBW0nJPiU0cdg4UwNpnUelPlNUVUN99FZoPLjHVEO9qHaFIXvKNcW6SU4iQ";
+    return "enKGX6hPEQ_ShKGaYiMFHQNnl8sPH92TNsrCy7sYsU0zl3Eucf0bLGEkRL6tlke2181eYaLqahDhtXlnWIi3Fw";
     $appid = AppId;
     $appsecret = AppSecret;
     $ch = curl_init(); // 创建一个cURL资源
@@ -242,7 +242,8 @@ function sendTemplateMsg($openid, $template_id, $url, $topcolor, $data) {
     curl_setopt($ch, CURLOPT_URL, "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={$access_token}");
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data_json);    
-    curl_setopt($ch, CURLOPT_HEADER, array('Content-Type: application/json', 'Content-Length: ' . strlen($post_data_json)));
+    //curl_setopt($ch, CURLOPT_HEADER, array('Content-Type: application/json', 'Content-Length: ' . strlen($post_data_json)));
+    curl_setopt($ch, CURLOPT_HEADER, 1);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $result = curl_exec($ch);
     curl_close($ch);

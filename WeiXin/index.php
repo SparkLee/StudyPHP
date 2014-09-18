@@ -2,7 +2,7 @@
 header("Content-type: text/html; charset=utf-8");
 include('functions.php');
 
-var_dump($access_token); //通过AppId和AppSecret获取$access_token
+//var_dump($access_token); //通过AppId和AppSecret获取$access_token
 //var_dump(getOpenIDs()); //获取关注者列表[返回用户OpenID数组]
 //var_dump(createGroup('自动创建'));
 //var_dump(getGroups());
