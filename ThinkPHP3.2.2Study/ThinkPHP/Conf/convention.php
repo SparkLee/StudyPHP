@@ -31,7 +31,7 @@ return  array(
 
     /* Cookie设置 */
     'COOKIE_EXPIRE'         =>  0,    // Cookie有效期
-    'COOKIE_DOMAIN'         =>  '',      // Cookie有效域名
+    'COOKIE_DOMAIN'         =>  'www.jingzhiheng.com',      // Cookie有效域名
     'COOKIE_PATH'           =>  '/',     // Cookie路径
     'COOKIE_PREFIX'         =>  '',      // Cookie前缀 避免冲突
     'COOKIE_HTTPONLY'       =>  '',      // Cookie httponly设置
@@ -165,4 +165,5 @@ return  array(
     'FILE_UPLOAD_TYPE'      =>  'Local',    // 文件上传方式
     'DATA_CRYPT_TYPE'       =>  'Think',    // 数据加密方式
 
+    'LOAD_EXT_CONFIG'       => 'user,db',   // 加载扩展配置文件。Added by SparkLee on 2014/10/10
 );

@@ -15,7 +15,7 @@
 if(version_compare(PHP_VERSION,'5.3.0','<'))  die('require PHP > 5.3.0 !');
 
 // 开启调试模式 建议开发阶段开启 部署阶段注释或者设为false
-define('APP_DEBUG',True);
+define('APP_DEBUG',true);
 
 // 定义应用目录
 //define('APP_PATH','./Application/');
@@ -27,6 +27,10 @@ define('APP_PATH','./Apps/'); //自定义项目目录-Added by SparkLee on 2014/
 
 // 定义应用运行时目录（可写）
 //define('RUNTIME_PATH','./Data/');
+
+//定义应用的状态（使用场景）
+//define('APP_STATUS','config4test'); //测试环境使用测试的配置文件Application/Common/Conf/config4test.php
+define('APP_STATUS','config4biz'); //商用环境使用商用的配置文件Application/Common/Conf/config4biz.php
 
 // 引入ThinkPHP入口文件
 require './ThinkPHP/ThinkPHP.php';
