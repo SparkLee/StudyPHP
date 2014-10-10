@@ -26,6 +26,8 @@ $data = array(
 );
 var_dump(sendTemplateMsg($openid, $template_id, $url, $topcolor, $data));
 var_dump(sendTemplateMsg($openid2, $template_id, $url, $topcolor, $data));
+echo urlencode('http://wei.vriworks.cn/mobile.php?act=module&name=spk_template_message&do=tingshuitongzhi_history&weid=18') . "\n";
+echo urlencode('http://wei.vriworks.cn/mobile.php?act=module&name=spk_template_message&do=tingshuitongzhi_history&weid=25');
 
 
 
