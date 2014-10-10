@@ -23,7 +23,7 @@ define('APP_PATH','./Apps/'); //自定义项目目录-Added by SparkLee on 2014/
 //define('APP_PATH','D:/www/php/spk/thinkphp-3.2.2/Application/');//给APP_PATH定义绝对路径会提高系统的加载效率
 
 // 定义ThinkPHP框架目录
-define('THINK_PATH','D:/www/php/spk/thinkphp-3.2.2/ThinkPHP/');
+//define('THINK_PATH','D:/www/php/spk/thinkphp-3.2.2/ThinkPHP/');
 
 // 定义应用运行时目录（可写）
 //define('RUNTIME_PATH','./Data/');
