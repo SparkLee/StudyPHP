@@ -30,7 +30,12 @@ define('APP_PATH','./Apps/'); //自定义项目目录-Added by SparkLee on 2014/
 
 //定义应用的状态（使用场景）
 //define('APP_STATUS','config4test'); //测试环境使用测试的配置文件Application/Common/Conf/config4test.php
-define('APP_STATUS','config4biz'); //商用环境使用商用的配置文件Application/Common/Conf/config4biz.php
+//define('APP_STATUS','config4biz'); //商用环境使用商用的配置文件Application/Common/Conf/config4biz.php
+
+//自生成模块目录
+//define('BIND_MODULE', 'Test');
+//define('BUILD_CONTROLLER_LIST', 'Index,User,Menu');
+//define('BUILD_MODEL_LIST', 'User,Menu');
 
 // 引入ThinkPHP入口文件
 require './ThinkPHP/ThinkPHP.php';
