@@ -165,5 +165,10 @@ return  array(
     'FILE_UPLOAD_TYPE'      =>  'Local',    // 文件上传方式
     'DATA_CRYPT_TYPE'       =>  'Think',    // 数据加密方式
 
-    'LOAD_EXT_CONFIG'       => 'user,db',   // 加载扩展配置文件。Added by SparkLee on 2014/10/10
+    'LOAD_EXT_CONFIG'       =>  'user,db',   // 加载扩展配置文件。Added by SparkLee on 2014/10/10
+    'MODULE_DENY_LIST'      =>  array('Common','Runtime'),   // 禁止访问模块。Added by SparkLee on 2014/10/10
+    
+    //'MODULE_ALLOW_LIST'     =>  array('Home','Admin','Test'),// 设置访问列表。Added by SparkLee on 2014/10/12
+    //'DEFAULT_MODULE'        =>  'Test',//设置默认模块。Added by SparkLee on 2014/10/12
+    
 );

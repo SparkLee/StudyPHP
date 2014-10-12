@@ -14,6 +14,16 @@ class IndexController extends Controller {
         C($config); //批量配置
         echo C('key001') . '<br>';
         
+        \Think\Build::buildController('Test','Role');//为Test模块创建Role控制器类文件
+        \Think\Build::buildModel('Test', 'Role');//为Test模块创建Role模型类文件
+        
         $this->show('<style type="text/css">*{ padding: 0; margin: 0; } div{ padding: 4px 48px;} body{ background: #fff; font-family: "微软雅黑"; color: #333;font-size:24px} h1{ font-size: 100px; font-weight: normal; margin-bottom: 12px; } p{ line-height: 1.8em; font-size: 36px }</style><div style="padding: 24px 48px;"> <h1>:)</h1><p>欢迎使用 <b>ThinkPHP</b>！</p><br/>[ 您现在访问的是Home模块的Index控制器 ]</div><script type="text/javascript" src="http://tajs.qq.com/stats?sId=9347272" charset="UTF-8"></script>','utf-8');
+    }
+    
+    public function test() {
+        echo I('name', 'liwei');
+        //$user_model = D('User'); //D('User') //实例化UserModel
+        //$user_logic = D('User','Logic'); //实例化UserLogic
+        //echo $user_logic->test();
     }
 }
