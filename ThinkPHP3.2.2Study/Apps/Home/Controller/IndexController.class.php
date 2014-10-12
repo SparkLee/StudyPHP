@@ -22,8 +22,13 @@ class IndexController extends Controller {
     
     public function test() {
         echo I('name', 'liwei');
+        
         //$user_model = D('User'); //D('User') //实例化UserModel
         //$user_logic = D('User','Logic'); //实例化UserLogic
         //echo $user_logic->test();
+        
+        tag('dosomeinghere');// 添加dosomeinghere标签侦听
+        
+        B('Home\Behavior\Test'); //单独执行行为
     }
 }
