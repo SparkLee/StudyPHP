@@ -1,6 +1,7 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
+use Org\Util\AuthOrg\Util\Auth;
 class IndexController extends Controller {
     public function index(){
         echo I('name', 'liwei');
@@ -30,5 +31,9 @@ class IndexController extends Controller {
         tag('dosomeinghere');// 添加dosomeinghere标签侦听
         
         B('Home\Behavior\Test'); //单独执行行为
+        
+        $test1 = new \Test\Test001\Index();
+        $test1->index();
+        $t = new \Org\Util\Auth();
     }
 }

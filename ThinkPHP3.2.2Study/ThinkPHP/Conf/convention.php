@@ -171,4 +171,8 @@ return  array(
     //'MODULE_ALLOW_LIST'     =>  array('Home','Admin','Test'),// 设置访问列表。Added by SparkLee on 2014/10/12
     //'DEFAULT_MODULE'        =>  'Test',//设置默认模块。Added by SparkLee on 2014/10/12
     
+    'AUTOLOAD_NAMESPACE'     =>  array(
+        //'Test'     => './ThinkPHP/Test',
+    ),
+    
 );

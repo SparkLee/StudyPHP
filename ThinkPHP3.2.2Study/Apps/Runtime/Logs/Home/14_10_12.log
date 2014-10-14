@@ -1393,3 +1393,473 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.008000s ]
 INFO: [ app_end ] --END-- [ RunTime:0.013000s ]
 
+[ 2014-10-12T17:20:21+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011000s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.006001s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.010001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009001s ]
+
+[ 2014-10-12T17:23:48+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010001s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.006000s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.010001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.008001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.012001s ]
+
+[ 2014-10-12T17:30:12+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.008001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011001s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.006000s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.010000s ]
+
+[ 2014-10-12T17:30:25+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011000s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.009001s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.013001s ]
+
+[ 2014-10-12T17:30:27+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.008000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011000s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.007001s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.010001s ]
+
+[ 2014-10-12T17:32:11+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.009001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.013001s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.006000s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.011000s ]
+
+[ 2014-10-12T17:32:20+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.014001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.018001s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.008001s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.012001s ]
+
+[ 2014-10-12T17:33:45+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010001s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.007000s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.011000s ]
+
+[ 2014-10-12T17:35:03+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010000s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.008001s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.012001s ]
+
+[ 2014-10-12T17:36:30+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010000s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.006000s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.009001s ]
+
+[ 2014-10-12T17:36:42+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010001s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.007000s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.011000s ]
+
+[ 2014-10-12T17:36:47+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009000s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.009001s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.011001s ]
+
+[ 2014-10-12T17:38:40+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009001s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.008000s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.011000s ]
+
+[ 2014-10-12T17:38:42+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008000s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.007001s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.011001s ]
+
+[ 2014-10-12T17:40:56+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.008000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.014000s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.008001s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.012001s ]
+
+[ 2014-10-12T17:40:58+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011001s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.008000s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.011000s ]
+
+[ 2014-10-12T17:43:00+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009000s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.006001s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.010001s ]
+
+[ 2014-10-12T17:43:01+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011001s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.008000s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.012000s ]
+
+[ 2014-10-12T17:43:01+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009000s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.006000s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.009001s ]
+
+[ 2014-10-12T17:44:27+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010001s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.008000s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.013001s ]
+
+[ 2014-10-12T17:44:28+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010001s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.008000s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.010000s ]
+
+[ 2014-10-12T17:44:29+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010001s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.007000s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.010000s ]
+
+[ 2014-10-12T17:46:22+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011001s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.008000s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.013000s ]
+
+[ 2014-10-12T17:46:24+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010001s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.009000s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.013000s ]
+
+[ 2014-10-12T17:48:07+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010001s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.006000s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.011000s ]
+
+[ 2014-10-12T17:48:08+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009001s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.007000s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.011001s ]
+
+[ 2014-10-12T17:48:09+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010000s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.007000s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.010001s ]
+
+[ 2014-10-12T17:48:09+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011000s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.006001s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.011001s ]
+
+[ 2014-10-12T17:48:37+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010000s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.008000s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.011001s ]
+
+[ 2014-10-12T18:19:22+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010001s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.007000s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.011001s ]
+
+[ 2014-10-12T18:19:30+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012001s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.009000s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.014001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.009001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.014001s ]
+
+[ 2014-10-12T18:21:40+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011001s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.007001s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.011001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.007001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.011001s ]
+
+[ 2014-10-12T18:21:41+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011001s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.015001s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.019001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.007000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010000s ]
+
+[ 2014-10-12T18:21:56+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.009001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.013001s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.009000s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.014001s ]
+
+[ 2014-10-12T18:22:35+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.004000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009000s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.008001s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.013001s ]
+
+[ 2014-10-12T18:22:55+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011001s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.008001s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.012001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.007000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010000s ]
+
+[ 2014-10-12T18:39:26+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.002000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.009000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.013001s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.010000s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.015001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.009000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.013000s ]
+
+[ 2014-10-12T18:39:58+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011000s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.006001s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.010001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.008000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.011000s ]
+
+[ 2014-10-12T18:40:31+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.002000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010001s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.007000s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.009000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008001s ]
+
+[ 2014-10-12T20:16:41+08:00 ] 127.0.0.1 /home/index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011001s ]
+INFO: [ dosomeinghere ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.009001s ]
+INFO: [ dosomeinghere ] --END-- [ RunTime:0.013001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.011001s ]
+
