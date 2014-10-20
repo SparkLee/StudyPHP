@@ -1,2 +1,7 @@
 <?php
-echo("你好");
+namespace User;
+class student {
+    public function __construct() {
+        echo "I am a student";
+    }
+}
