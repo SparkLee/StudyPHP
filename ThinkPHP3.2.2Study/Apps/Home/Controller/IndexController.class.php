@@ -2,6 +2,14 @@
 namespace Home\Controller;
 use Think\Controller;
 use Org\Util\AuthOrg\Util\Auth;
+Vendor('Zend.Filter.Dir');
+import('Vendor.Zend.Filter.Dir2'); //手动加载类库文件Dir2.class.php
+import('testhome.testhome', dirname(__FILE__), ".php");
+class dir_test {
+    public function __construct() {
+        echo '我的位置：D:\www\spk\GitHub-SparkLee\StudyPHP\ThinkPHP3.2.2Study\Apps\Home\Controller\IndexController.class.php';    
+    }
+}
 class IndexController extends Controller {
     public function index(){
         echo I('name', 'liwei');
@@ -22,18 +30,26 @@ class IndexController extends Controller {
     }
     
     public function test() {
-        echo I('name', 'liwei');
+        //echo I('name', 'liwei');
         
         //$user_model = D('User'); //D('User') //实例化UserModel
         //$user_logic = D('User','Logic'); //实例化UserLogic
         //echo $user_logic->test();
         
-        tag('dosomeinghere');// 添加dosomeinghere标签侦听
+        //tag('dosomeinghere');// 添加dosomeinghere标签侦听
         
-        B('Home\Behavior\Test'); //单独执行行为
+        //B('Home\Behavior\Test'); //单独执行行为
         
-        $test1 = new \Test\Test001\Index();
-        $test1->index();
-        $t = new \Org\Util\Auth();
+        //$test1 = new \Test\Test001\Index();
+        //$test1->index();
+        //$t = new \Org\Util\Auth();
+        
+        //$http = new Http();
+        //$dir_test = new \dir_test(); //Vendor('Zend.Filter.Dir'); 手动加载第三方类库
+        //$dir_test2 = new \dir_test2(); //import('Vendor.Zend.Filter.Dir2'); 手动加载第三方类库
+        //$testhome = new \testhome();//import('testhome.testhome', dirname(__FILE__), ".php"); 手动加载第三方类库
+        
+        \Think\Think::addMap('testhome22', APP_PATH . 'Home/Controller/testhome/testhome2.php');
+        $testhome2 = new \testhome22\testhome2();
     }
 }
