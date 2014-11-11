@@ -35,6 +35,8 @@ class IndexController extends Controller {
         echo "i am test" . "<br>";
         echo "姓名：" . $_GET['name'] . "<br>";
         echo "年龄：" . $_GET['age'] . "<br>";
+        echo "年份：" . $_GET['year'] . "<br>";
+        echo "月份：" . $_GET['month'] . "<br>";
         //$user_model = D('User'); //D('User') //实例化UserModel
         //$user_logic = D('User','Logic'); //实例化UserLogic
         //echo $user_logic->test();
