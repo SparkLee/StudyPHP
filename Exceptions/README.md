@@ -1,0 +1,1 @@
+PHP的异常处理：http://php.net/manual/zh/language.exceptions.php
