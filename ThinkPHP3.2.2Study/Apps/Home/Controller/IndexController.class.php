@@ -11,6 +11,12 @@ class dir_test {
     }
 }
 class IndexController extends Controller {
+    //空操作
+    public function _empty($action_name) {
+        header("content-type:text/html; charset=utf-8");
+        echo "没有定义操作方法：" . $action_name;
+    }
+    
     public function index(){
         echo I('name', 'liwei');
         var_dump(I('get.'));
@@ -29,14 +35,31 @@ class IndexController extends Controller {
         $this->show('<style type="text/css">*{ padding: 0; margin: 0; } div{ padding: 4px 48px;} body{ background: #fff; font-family: "微软雅黑"; color: #333;font-size:24px} h1{ font-size: 100px; font-weight: normal; margin-bottom: 12px; } p{ line-height: 1.8em; font-size: 36px }</style><div style="padding: 24px 48px;"> <h1>:)</h1><p>欢迎使用 <b>ThinkPHP</b>！</p><br/>[ 您现在访问的是Home模块的Index控制器 ]</div><script type="text/javascript" src="http://tajs.qq.com/stats?sId=9347272" charset="UTF-8"></script>','utf-8');
     }
     
-    public function t() {
+    //前置操作方法
+    public function _before_t() {
+        echo "<hr>我是前置操作方法<hr>";
+    }
+    
+    //后置操作方法
+    public function _after_t() {
+        echo "<hr>我是后置操作方法<hr>";
+    }
+    
+    public function t($param) {
         header("Content-type: text/html; charset=utf-8");
+        
+        echo "<hr>Action参数值：$param<hr>"; //
+         
+        echo "<hr>动态生成URL：" . U('home/index/t#comment@blog.thinkphp.com?name=zhangsan') . "<hr>";
+        
         //echo I('name', 'liwei');
         echo "i am test" . "<br>";
-        echo "姓名：" . $_GET['name'] . "<br>";
+        echo "姓名：" . I("get.name", "default name", "htmlspecialchars") . "<br>";
         echo "年龄：" . $_GET['age'] . "<br>";
         echo "年份：" . $_GET['year'] . "<br>";
         echo "月份：" . $_GET['month'] . "<br>";
+        echo I("path.2") . "<br>";
+        var_dump(I("get."));
         //$user_model = D('User'); //D('User') //实例化UserModel
         //$user_logic = D('User','Logic'); //实例化UserLogic
         //echo $user_logic->test();
@@ -56,5 +79,29 @@ class IndexController extends Controller {
         
         //\Think\Think::addMap('testhome22', APP_PATH . 'Home/Controller/testhome/testhome2.php');
         //$testhome2 = new \testhome22\testhome2();
+        
+        //$userevent = new \Home\Event\UserEvent();
+        $userevent = A("Home/User", "Event");
+        $userevent->login();
     }
+    
+    public function t1Action() {
+        header("content-type:text/html; charset=utf-8");
+        echo "操作方法名带操作方法后缀";
+    }
+    
+    public function ajaxtest() {
+        echo "hello world.<br>";
+        header("content-type:text/html; charset=utf-8");
+        //$data = 'ok';
+        $data['name'] = 'sparklee';
+        $data['age'] = 26;
+        //$this->ajaxReturn($data, 'json');
+        //$this->success('新增成功', '/home/index', 100);
+        //$this->error('新增失败');
+        
+        $this->redirect('New/category', array('cate_id' => 2), 5, '页面跳转中...');
+    }
+    
+    
 }

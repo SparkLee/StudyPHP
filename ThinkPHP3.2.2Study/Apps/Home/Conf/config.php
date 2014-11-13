@@ -1,6 +1,5 @@
 <?php
 return array(
-	//'配置项'=>'配置值'
     'COOKIE_DOMAIN'         =>  'www.模块配置文件.com',      // Cookie有效域名
     'URL_ROUTER_ON'         => true, //开启路由
     'URL_ROUTE_RULES'       => array(
@@ -39,4 +38,7 @@ return array(
     'URL_MAP_RULES' => array(
         'test_router7/中国人' => 'index/t?name=我是中国人'
     ),
+    
+    // 操作方法后缀
+    //'ACTION_SUFFIX'         =>  'Action', 
 );
