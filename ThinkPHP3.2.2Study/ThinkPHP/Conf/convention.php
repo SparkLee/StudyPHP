@@ -52,12 +52,12 @@ return  array(
     'DEFAULT_FILTER'        =>  'htmlspecialchars', // 默认参数过滤方法 用于I函数...
 
     /* 数据库设置 */
-    'DB_TYPE'               =>  '',     // 数据库类型
-    'DB_HOST'               =>  '', // 服务器地址
-    'DB_NAME'               =>  '',          // 数据库名
-    'DB_USER'               =>  '',      // 用户名
+    'DB_TYPE'               =>  'mysql',     // 数据库类型
+    'DB_HOST'               =>  'localhost', // 服务器地址
+    'DB_NAME'               =>  'testdb',          // 数据库名
+    'DB_USER'               =>  'root',      // 用户名
     'DB_PWD'                =>  '',          // 密码
-    'DB_PORT'               =>  '',        // 端口
+    'DB_PORT'               =>  '3306',        // 端口
     'DB_PREFIX'             =>  '',    // 数据库表前缀
     'DB_FIELDTYPE_CHECK'    =>  false,       // 是否进行字段类型检查
     'DB_FIELDS_CACHE'       =>  true,        // 启用字段缓存
@@ -71,6 +71,7 @@ return  array(
     'DB_SQL_BUILD_LENGTH'   =>  20, // SQL缓存的队列长度
     'DB_SQL_LOG'            =>  false, // SQL执行日志记录
     'DB_BIND_PARAM'         =>  false, // 数据库写入数据自动参数绑定
+    'DB_CONFIG_ONETHINK'    =>  'mysql://root:@localhost:3306/onethink', //onethink数据库的连接信息
 
     /* 数据缓存设置 */
     'DATA_CACHE_TIME'       =>  0,      // 数据缓存有效期 0表示永久缓存

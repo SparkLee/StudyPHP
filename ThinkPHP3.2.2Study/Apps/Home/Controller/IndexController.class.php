@@ -103,5 +103,25 @@ class IndexController extends Controller {
         $this->redirect('New/category', array('cate_id' => 2), 5, '页面跳转中...');
     }
     
+    public function modeltest() {
+        header("content-type:text/html; charset=utf-8");
+        $user = M("user");
+        $user->add();
+        $results = $user->select();
+        //var_dump($results);
+        
+        //$action = M("action", "onethink_", "mysql://root:@localhost:3306/onethink"); //M方法也可以支持跨库操作。操作onethink库中的onethink_action表。
+        $action = M("addons", "onethink_", DB_CONFIG_ONETHINK);
+        $results = $action->select();
+        //var_dump($results);
+        
+        $model = M(); //实例化空模型类，使用自定义的SQL语句
+        $results = $model->query("SELECT * FROM user");
+        //var_dump($results);
+        
+        $model = D("User");
+        //var_dump($model);
+        //$model->getUserName();
+    }
     
 }
