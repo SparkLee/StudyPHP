@@ -2,6 +2,7 @@
 return array(
     'COOKIE_DOMAIN'         =>  'www.模块配置文件.com',      // Cookie有效域名
     'URL_ROUTER_ON'         => true, //开启路由
+    'DB_FIELDS_CACHE'       => true,        // 启用字段缓存
     'URL_ROUTE_RULES'       => array(
         //规则路由
         'test_router/:name'  => 'index/t', //每个参数中以“:”开头的参数都表示动态参数，并且会自动对应一个GET参数，例如:id表示该处匹配到的参数可以使用$_GET['id']方式获取，:year、 :month 、:day 则分别对应$_GET['year']、 $_GET['month'] 和 $_GET['day']。

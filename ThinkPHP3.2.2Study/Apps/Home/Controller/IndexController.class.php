@@ -106,9 +106,33 @@ class IndexController extends Controller {
     public function modeltest() {
         header("content-type:text/html; charset=utf-8");
         $user = M("user");
-        $user->add();
-        $results = $user->select();
-        //var_dump($results);
+        //$user->where("id=12")->delete();
+        
+        $where["name"] = array("EQ", "tie");
+        $where["gender"] = 1;
+        $results = $user->field(array("name", "gender"), true) //字段排除：获取除name和gender两个字段以外的所有字段
+                        //->table(array("user" => "a", "user_detail" => "b"))
+                        //->where($where) //数组条件
+                        //->where("name = '%s' AND gender = %d", array('tie', 1)) //字符串条件：如果使用3.1以上版本的话，使用字符串条件的时候，建议配合预处理机制，确保更加安全
+                        ->order("id DESC")
+                        //->limit(20)
+                        ->page(3,1)
+                        ->select();
+        
+        //$results = $user->data(); //除了写操作外，data方法还可以用于读取当前的数据对象
+        
+        //$fields = $user->getDbFie
+        //$user->add(array("name" => "tie", "age" => 10, "gender" => 1)); //新增记录
+        //$user->data(array("name" => "tie001", "age" => 20, "gender" => 0))->where("id = 23")->save(); //更新记录
+        //var_dump($fields);
+        
+        //$results = $user->db(1, "mysql://super:vw1301@211.149.209.33:3306/test")->query("select * from fruit"); //切换数据库
+        //$results = $user->db(1, "mysql://super:vw1301@211.149.209.33:3306/test")->table("fruit")->select(); //如果切换数据库之后，数据表和当前不一致的话，可以使用table方法指定要操作的数据表
+        //$results = $user->db(1, "mysql://super:vw1301@211.149.209.33:3306/test")->table("fruit")->find();
+        var_dump($results);
+        
+        //$user->db(0)->add(array("name" => "tie", "age" => 10, "gender" => 1));
+        exit;
         
         //$action = M("action", "onethink_", "mysql://root:@localhost:3306/onethink"); //M方法也可以支持跨库操作。操作onethink库中的onethink_action表。
         $action = M("addons", "onethink_", DB_CONFIG_ONETHINK);
