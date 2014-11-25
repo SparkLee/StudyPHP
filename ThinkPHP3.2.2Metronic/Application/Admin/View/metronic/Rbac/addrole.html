@@ -1,0 +1,81 @@
+<extend name="Public/base" />
+
+<!-- 重载父模板中name="page-content"的区块 -->
+<block name="page-content">
+<div class="page-content">
+   <!-- BEGIN PAGE CONTAINER-->
+   <div class="container-fluid">
+      <!-- BEGIN PAGE HEADER-->   
+      <div class="row-fluid">
+         <div class="span12">
+            <!-- BEGIN STYLE CUSTOMIZER -->
+            <div class="color-panel hidden-phone">
+               <div class="color-mode-icons icon-color"></div>
+               <div class="color-mode-icons icon-color-close"></div>
+               <div class="color-mode">
+                  <p>THEME COLOR</p>
+                  <ul class="inline">
+                     <li class="color-black current color-default" data-style="default"></li>
+                     <li class="color-blue" data-style="blue"></li>
+                     <li class="color-brown" data-style="brown"></li>
+                     <li class="color-purple" data-style="purple"></li>
+                     <li class="color-white color-light" data-style="light"></li>
+                  </ul>
+                  <label class="hidden-phone">
+                  <input type="checkbox" class="header" checked value="" />
+                  <span class="color-mode-label">Fixed Header</span>
+                  </label>                    
+               </div>
+            </div>
+            <!-- END BEGIN STYLE CUSTOMIZER -->  
+            <h3 class="page-title">添加角色</h3>
+            <ul class="breadcrumb">
+               <li>
+                  <i class="icon-home"></i>
+                  <a href="{:U('Index/index')}">首页</a> 
+                  <span class="icon-angle-right"></span>
+               </li>
+               <li><a href="{:U('Rbac/addRole')}">权限管理</a><span class="icon-angle-right"></span>
+               </li>
+               <li><a href="{:U('Rbac/addRole')}">添加角色</a></li>
+            </ul>
+         </div>
+      </div>
+      <!-- END PAGE HEADER-->
+      <!-- BEGIN PAGE CONTENT-->
+      <div class="row-fluid">
+          <div class="span12">
+              <form action="{:U('Rbac/addRoleHandler')}" method="post" class="form-horizontal form-row-seperated">
+	              <div class="control-group">
+	                 <label class="control-label">角色名称</label>
+	                 <div class="controls">
+	                    <input type="text" name="name" placeholder="" class="m-wrap span6">
+	                 </div>
+	              </div>
+	              <div class="control-group">
+	                 <label class="control-label">角色描述</label>
+	                 <div class="controls">
+	                    <input type="text" name="remark" placeholder="" class="m-wrap span6">
+	                 </div>
+	              </div>
+	              <div class="control-group">
+	                 <label class="control-label">是否开启</label>
+	                 <div class="controls">                                                
+	                    <label class="radio"><div class="radio" id="uniform-undefined">
+	                    <span class="checked"><input type="radio" name="status" value="1" checked="" style="opacity: 0;"></span></div>是</label>
+	                    <label class="radio"><div class="radio" id="uniform-undefined">
+	                    <span><input type="radio" name="status" value="0" style="opacity: 0;"></span></div>否</label>  
+	                 </div>
+	              </div>
+	              <div class="form-actions">
+	                 <button type="submit" class="btn blue"><i class="icon-ok"></i> 保存</button>
+	                 <button type="reset" class="btn">重置</button>
+	              </div>
+	           </form>
+          </div>
+      </div>
+      <!-- END PAGE CONTENT-->         
+   </div>
+   <!-- END PAGE CONTAINER-->
+</div>
+</block>
