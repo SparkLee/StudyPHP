@@ -22,4 +22,12 @@ class RbacController extends Controller {
             $this->success("角色添加成功", U("Rbac/addRole"));
         }
     }
+    
+    /**
+     * 角色管理模板展示
+     */
+    public function roleList() {
+        $this->roles = M("role", "think_")->select();
+        $this->display();  
+    }
 }

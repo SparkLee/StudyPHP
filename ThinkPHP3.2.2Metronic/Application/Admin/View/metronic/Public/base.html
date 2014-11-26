@@ -6,9 +6,9 @@ Author: KeenThemes
 Website: http://www.keenthemes.com/preview/?theme=metronic
 Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469
 -->
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if IE 8]> <html lang="zh-cn" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="zh-cn" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="zh-cn"> <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
 	<meta charset="utf-8" />
@@ -271,75 +271,21 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 	<!-- BEGIN CONTAINER -->
 	<div class="page-container row-fluid">
 		<!-- BEGIN SIDEBAR -->
-		<div class="page-sidebar nav-collapse collapse">
-			<!-- BEGIN SIDEBAR MENU -->        	
-			<ul>
-				<li>
-					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-					<div class="sidebar-toggler hidden-phone"></div>
-					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-				</li>
-				<li>
-					<!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
-					<form class="sidebar-search">
-						<div class="input-box">
-							<a href="javascript:;" class="remove"></a>
-							<input type="text" placeholder="搜索..." />				
-							<input type="button" class="submit" value=" " />
-						</div>
-					</form>
-					<!-- END RESPONSIVE QUICK SEARCH FORM -->
-				</li>
-				<li class="start active ">
-					<a href="{:U('Index/index')}">
-					<i class="icon-home"></i> 
-					<span class="title">管理控制台</span>
-					<span class="selected"></span>
-					</a>
-				</li>
-				<li class="has-sub">
-					<a href="javascript:;">
-					<i class="icon-bookmark-empty"></i> 
-					<span class="title">权限管理</span>
-					<span class="arrow "></span>
-					</a>
-					<ul class="sub">
-						<li ><a href="{:U('Rbac/addRole')}">添加角色</a></li>
-						<li ><a href="ui_buttons.html">角色管理</a></li>
-						<li ><a href="ui_tabs_accordions.html">添加权限</a></li>
-						<li ><a href="ui_sliders.html">权限管理</a></li>
-						<li ><a href="ui_tiles.html">添加用户</a></li>
-						<li ><a href="ui_typography.html">用户管理</a></li>
-					</ul>
-				</li>
-				<li class="has-sub ">
-					<a href="javascript:;">
-					<i class="icon-table"></i> 
-					<span class="title">文章管理</span>
-					<span class="arrow "></span>
-					</a>
-					<ul class="sub">
-						<li ><a href="form_layout.html">发布文章</a></li>
-						<li ><a href="form_samples.html">删除文章</a></li>
-						<li ><a href="form_component.html">修改文章</a></li>
-					</ul>
-				</li>
-				<li class="has-sub ">
-					<a href="javascript:;">
-					<i class="icon-th-list"></i> 
-					<span class="title">安全处理</span>
-					<span class="arrow "></span>
-					</a>
-					<ul class="sub">
-						<li ><a href="table_basic.html">安全退出</a></li>
-					</ul>
-				</li>
-			</ul>
-			<!-- END SIDEBAR MENU -->
-		</div>
+		<include file="Public/base-sidebar" />
 		<!-- END SIDEBAR -->
 		<!-- BEGIN PAGE 此主内容区块将被模板继承者重载 -->
-		<block name="page-content"></block>
+		<div class="page-content">
+		   <!-- BEGIN PAGE CONTAINER-->
+		   <div class="container-fluid">
+		      <!-- BEGIN PAGE HEADER-->   
+		      <block name="page-header"></block>
+		      <!-- END PAGE HEADER-->
+		      <!-- BEGIN PAGE CONTENT-->
+		      <block name="page-content"></block>
+		      <!-- END PAGE CONTENT-->         
+		   </div>
+		   <!-- END PAGE CONTAINER-->
+		</div>
 		<!-- END PAGE -->
 	</div>
 	<!-- END CONTAINER -->
