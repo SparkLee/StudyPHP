@@ -1,5 +1,25 @@
 <extend name="Public/base" />
 
+<block name="head-css">
+	<link href="__METRONIC__/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="__METRONIC__/assets/css/metro.css" rel="stylesheet">
+	<link href="__METRONIC__/assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="__METRONIC__/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+	<link href="__METRONIC__/assets/css/style.css" rel="stylesheet">
+	<link href="__METRONIC__/assets/css/style_responsive.css" rel="stylesheet">
+	<link href="__METRONIC__/assets/css/style_default.css" rel="stylesheet" id="style_color">
+	<link href="__METRONIC__/assets/fancybox/source/jquery.fancybox.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="__METRONIC__/assets/gritter/css/jquery.gritter.css">
+	<link rel="stylesheet" type="text/css" href="__METRONIC__/assets/chosen-bootstrap/chosen/chosen.css">
+	<link rel="stylesheet" type="text/css" href="__METRONIC__/assets/bootstrap-wysihtml5/bootstrap-wysihtml5.css">
+	<link rel="stylesheet" type="text/css" href="__METRONIC__/assets/bootstrap-datepicker/css/datepicker.css">
+	<link rel="stylesheet" type="text/css" href="__METRONIC__/assets/bootstrap-timepicker/compiled/timepicker.css">
+	<link rel="stylesheet" type="text/css" href="__METRONIC__/assets/bootstrap-colorpicker/css/colorpicker.css">
+	<link rel="stylesheet" href="__METRONIC__/assets/bootstrap-toggle-buttons/static/stylesheets/bootstrap-toggle-buttons.css">
+	<link rel="stylesheet" type="text/css" href="__METRONIC__/assets/bootstrap-daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="__METRONIC__/assets/uniform/css/uniform.default.css">
+</block>
+
 <block name="page-header">
 <!-- BEGIN PAGE HEADER-->
 <div class="row-fluid">
@@ -25,10 +45,93 @@
 <!-- END PAGE HEADER-->	
 </block>
 
+<block name="page-sidebar">
+	<!-- BEGIN SIDEBAR -->
+	<div class="page-sidebar nav-collapse collapse">
+	<!-- BEGIN SIDEBAR MENU -->        	
+	<ul>
+		<li>
+			<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+			<div class="sidebar-toggler hidden-phone"></div>
+			<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+		</li>
+		<li>
+			<!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
+			<form class="sidebar-search">
+				<div class="input-box">
+					<a href="javascript:;" class="remove"></a>
+					<input type="text" placeholder="搜索...">				
+					<input type="button" class="submit" value=" ">
+				</div>
+			</form>
+			<!-- END RESPONSIVE QUICK SEARCH FORM -->
+		</li>
+		<li class="start ">
+			<a href="{:U('Index/index')}">
+			<i class="icon-home"></i> 
+			<span class="title">管理控制台</span>
+			</a>
+		</li>
+		<li class="active has-sub ">
+			<a href="javascript:;">
+			<i class="icon-bookmark-empty"></i> 
+			<span class="title">权限管理</span>
+			<span class="selected"></span>
+			<span class="arrow open"></span>
+			</a>
+			<ul class="sub">
+				<li class="active"><a href="{:U('Rbac/addRole')}">添加角色</a></li>
+				<li ><a href="{:U('Rbac/roleList')}">角色管理</a></li>
+				<li ><a href="ui_tabs_accordions.html">添加权限</a></li>
+				<li ><a href="ui_sliders.html">权限管理</a></li>
+				<li ><a href="ui_tiles.html">添加用户</a></li>
+				<li ><a href="ui_typography.html">用户管理</a></li>
+			</ul>
+		</li>
+		<li class="has-sub ">
+			<a href="javascript:;">
+			<i class="icon-table"></i> 
+			<span class="title">文章管理</span>
+			<span class="arrow "></span>
+			</a>
+			<ul class="sub">
+				<li ><a href="form_layout.html">发布文章</a></li>
+				<li ><a href="form_samples.html">删除文章</a></li>
+				<li ><a href="form_component.html">修改文章</a></li>
+			</ul>
+		</li>
+		<li class="has-sub ">
+			<a href="javascript:;">
+			<i class="icon-th-list"></i> 
+			<span class="title">安全处理</span>
+			<span class="arrow "></span>
+			</a>
+			<ul class="sub">
+				<li ><a href="table_basic.html">安全退出</a></li>
+			</ul>
+		</li>
+	</ul>
+	<!-- END SIDEBAR MENU -->
+	</div>
+    <!-- END SIDEBAR -->
+</block>
+
 <block name="page-content">
-<!-- BEGIN PAGE CONTENT-->
-<div class="row-fluid" style="border: 1px solid #4B8DF8 !important; padding-top: 25px;">
-    <div class="span12">
+	<!-- BEGIN PAGE CONTENT-->
+	<div class="row-fluid">
+	<div class="span12">
+	<div class="portlet box blue">
+	<div class="portlet-title">
+	   <h4><i class="icon-reorder"></i>添加角色</h4>
+	   <div class="tools">
+	      <a href="javascript:;" class="collapse"></a>
+	      <a href="#portlet-config" data-toggle="modal" class="config"></a>
+	      <a href="javascript:;" class="reload"></a>
+	      <a href="javascript:;" class="remove"></a>
+	   </div>
+	</div>
+	<div class="portlet-body form">
+	   <!-- BEGIN FORM-->
         <form action="{:U('Rbac/addRoleHandler')}" method="post" class="form-horizontal form-row-seperated">
          <div class="control-group">
             <label class="control-label">角色名称</label>
@@ -56,7 +159,49 @@
             <button type="reset" class="btn">重置</button>
          </div>
       </form>
+      <!-- END FORM-->
+    </div>
+    </div>
     </div>
 </div>
 <!-- END PAGE CONTENT-->
+</block>
+
+<block name="foot-js">
+	<!-- BEGIN JAVASCRIPTS -->    
+	<!-- Load javascripts at bottom, this will reduce page load time -->
+	<script src="__METRONIC__/assets/js/jquery-1.8.3.min.js"></script>    
+	<script src="__METRONIC__/assets/breakpoints/breakpoints.js"></script>       
+	<script src="__METRONIC__/assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="__METRONIC__/assets/js/jquery.blockui.js"></script>
+	<script src="__METRONIC__/assets/js/jquery.cookie.js"></script>
+	<!-- ie8 fixes -->
+	<!--[if lt IE 9]>
+	<script src="__METRONIC__/assets/js/excanvas.js"></script>
+	<script src="__METRONIC__/assets/js/respond.js"></script>
+	<![endif]-->
+	<script type="text/javascript" src="__METRONIC__/assets/chosen-bootstrap/chosen/chosen.jquery.min.js"></script>
+	<script type="text/javascript" src="__METRONIC__/assets/uniform/jquery.uniform.min.js"></script>
+	<script type="text/javascript" src="__METRONIC__/assets/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script> 
+	<script type="text/javascript" src="__METRONIC__/assets/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
+	<script type="text/javascript" src="__METRONIC__/assets/bootstrap-toggle-buttons/static/js/jquery.toggle.buttons.js"></script>
+	<script type="text/javascript" src="__METRONIC__/assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+	<script type="text/javascript" src="__METRONIC__/assets/bootstrap-daterangepicker/date.js"></script>
+	<script type="text/javascript" src="__METRONIC__/assets/bootstrap-daterangepicker/daterangepicker.js"></script> 
+	<script type="text/javascript" src="__METRONIC__/assets/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>  
+	<script type="text/javascript" src="__METRONIC__/assets/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+	<script src="__METRONIC__/assets/js/app.js"></script>     
+	<script>
+	   jQuery(document).ready(function() {       
+	   
+	      // to fix chosen dropdown width in inactive hidden tab content
+	      $('.advance_form_with_chosen_element').on('shown', function (e) {
+	         App.initChosenSelect('.chosen_category:visible');
+	      });
+	   
+	      // initiate layout and plugins
+	      App.init();
+	   });
+	</script>
+	<!-- END JAVASCRIPTS -->  
 </block>

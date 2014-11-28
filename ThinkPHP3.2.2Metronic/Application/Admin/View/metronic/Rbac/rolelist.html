@@ -1,156 +1,230 @@
 <extend name="Public/base" />
 
+<block name="head-css">
+	<link href="__METRONIC__/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="__METRONIC__/assets/css/metro.css" rel="stylesheet" />
+	<link href="__METRONIC__/assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+	<link href="__METRONIC__/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+	<link href="__METRONIC__/assets/css/style.css" rel="stylesheet" />
+	<link href="__METRONIC__/assets/css/style_responsive.css" rel="stylesheet" />
+	<link href="__METRONIC__/assets/css/style_default.css" rel="stylesheet" id="style_color" />
+	<link href="__METRONIC__/assets/fancybox/source/jquery.fancybox.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="__METRONIC__/assets/uniform/css/uniform.default.css" />
+	<link rel="stylesheet" type="text/css" href="__METRONIC__/assets/chosen-bootstrap/chosen/chosen.css" />
+	<link rel="stylesheet" href="__METRONIC__/assets/data-tables/DT_bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="__METRONIC__/assets/uniform/css/uniform.default.css" />
+</block>
+
 <block name="page-header">
-<!-- BEGIN PAGE HEADER-->
-<div class="row-fluid">
-   <div class="span12">
-      <!-- BEGIN PAGE TITLE & BREADCRUMB-->
-      <h3 class="page-title">角色管理</small>
-      </h3>
-      <ul class="breadcrumb">
-         <li>
-            <i class="icon-home"></i>
-            <a href="{:U('Index/index')}">首页</a> 
-            <span class="icon-angle-right"></span>
-         </li>
-         <li>
-            <a href="{:U('Rbac/roleList')}">权限管理</a>
-            <span class="icon-angle-right"></span>
-         </li>
-         <li><a href="{:U('Rbac/roleList')}">角色管理</a></li>
-      </ul>
-      <!-- END PAGE TITLE & BREADCRUMB-->
-   </div>
-</div>
-<!-- END PAGE HEADER-->
+	<!-- BEGIN PAGE HEADER-->
+	<div class="row-fluid">
+	   <div class="span12">
+	      <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+	      <h3 class="page-title">角色管理</small>
+	      </h3>
+	      <ul class="breadcrumb">
+	         <li>
+	            <i class="icon-home"></i>
+	            <a href="{:U('Index/index')}">首页</a> 
+	            <span class="icon-angle-right"></span>
+	         </li>
+	         <li>
+	            <a href="{:U('Rbac/roleList')}">权限管理</a>
+	            <span class="icon-angle-right"></span>
+	         </li>
+	         <li><a href="{:U('Rbac/roleList')}">角色管理</a></li>
+	      </ul>
+	      <!-- END PAGE TITLE & BREADCRUMB-->
+	   </div>
+	</div>
+	<!-- END PAGE HEADER-->
+</block>
+
+<block name="page-sidebar">
+	<!-- BEGIN SIDEBAR -->
+	<div class="page-sidebar nav-collapse collapse">
+	<!-- BEGIN SIDEBAR MENU -->        	
+	<ul>
+		<li>
+			<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+			<div class="sidebar-toggler hidden-phone"></div>
+			<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+		</li>
+		<li>
+			<!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
+			<form class="sidebar-search">
+				<div class="input-box">
+					<a href="javascript:;" class="remove"></a>
+					<input type="text" placeholder="搜索...">				
+					<input type="button" class="submit" value=" ">
+				</div>
+			</form>
+			<!-- END RESPONSIVE QUICK SEARCH FORM -->
+		</li>
+		<li class="start ">
+			<a href="{:U('Index/index')}">
+			<i class="icon-home"></i> 
+			<span class="title">管理控制台</span>
+			</a>
+		</li>
+		<li class="active has-sub ">
+			<a href="javascript:;">
+			<i class="icon-bookmark-empty"></i> 
+			<span class="title">权限管理</span>
+			<span class="selected"></span>
+			<span class="arrow open"></span>
+			</a>
+			<ul class="sub">
+				<li ><a href="{:U('Rbac/addRole')}">添加角色</a></li>
+				<li class="active"><a href="{:U('Rbac/roleList')}">角色管理</a></li>
+				<li ><a href="ui_tabs_accordions.html">添加权限</a></li>
+				<li ><a href="ui_sliders.html">权限管理</a></li>
+				<li ><a href="ui_tiles.html">添加用户</a></li>
+				<li ><a href="ui_typography.html">用户管理</a></li>
+			</ul>
+		</li>
+		<li class="has-sub ">
+			<a href="javascript:;">
+			<i class="icon-table"></i> 
+			<span class="title">文章管理</span>
+			<span class="arrow "></span>
+			</a>
+			<ul class="sub">
+				<li ><a href="form_layout.html">发布文章</a></li>
+				<li ><a href="form_samples.html">删除文章</a></li>
+				<li ><a href="form_component.html">修改文章</a></li>
+			</ul>
+		</li>
+		<li class="has-sub ">
+			<a href="javascript:;">
+			<i class="icon-th-list"></i> 
+			<span class="title">安全处理</span>
+			<span class="arrow "></span>
+			</a>
+			<ul class="sub">
+				<li ><a href="table_basic.html">安全退出</a></li>
+			</ul>
+		</li>
+	</ul>
+	<!-- END SIDEBAR MENU -->
+	</div>
+    <!-- END SIDEBAR -->
 </block>
 
 <block name="page-content">
-<!-- BEGIN PAGE CONTENT-->
-<div class="row-fluid">
-	<div class="span12">
-		<!-- BEGIN EXAMPLE TABLE PORTLET-->
-		<div class="portlet box blue">
-			<div class="portlet-title">
-				<h4>
-					<i class="icon-edit"></i>Editable Table
-				</h4>
-				<div class="tools">
-					<a href="javascript:;" class="collapse"></a> <a
-						href="#portlet-config" data-toggle="modal" class="config"></a> <a
-						href="javascript:;" class="reload"></a> <a href="javascript:;"
-						class="remove"></a>
-				</div>
-			</div>
-			<div class="portlet-body">
-				<div class="clearfix">
-					<div class="btn-group">
-						<button id="sample_editable_1_new" class="btn green">
-							Add New <i class="icon-plus"></i>
-						</button>
-					</div>
-					<div class="btn-group pull-right">
-						<button class="btn dropdown-toggle" data-toggle="dropdown">
-							Tools <i class="icon-angle-down"></i>
-						</button>
-						<ul class="dropdown-menu">
-							<li><a href="#">Print</a></li>
-							<li><a href="#">Save as PDF</a></li>
-							<li><a href="#">Export to Excel</a></li>
-						</ul>
+	<!-- BEGIN PAGE CONTENT-->
+	<div class="row-fluid">
+		<div class="span12">
+			<!-- BEGIN EXAMPLE TABLE PORTLET-->
+			<div class="portlet box blue">
+				<div class="portlet-title">
+					<h4>
+						<i class="icon-edit"></i>角色管理
+					</h4>
+					<div class="tools">
+						<a href="javascript:;" class="collapse"></a> <a
+							href="#portlet-config" data-toggle="modal" class="config"></a> <a
+							href="javascript:;" class="reload"></a> <a href="javascript:;"
+							class="remove"></a>
 					</div>
 				</div>
-				<div id="sample_editable_1_wrapper"
-					class="dataTables_wrapper form-inline" role="grid">
-					<div class="row-fluid">
-						<div class="span6">
-							<div id="sample_editable_1_length" class="dataTables_length">
-								<label><select size="1" name="sample_editable_1_length"
-									aria-controls="sample_editable_1" class="m-wrap xsmall"><option
-											value="10" selected="selected">10</option>
-										<option value="25">25</option>
-										<option value="50">50</option>
-										<option value="100">100</option></select> records per page</label>
-							</div>
+				<div class="portlet-body">
+					<div class="clearfix">
+						<div class="btn-group">
+							<button id="sample_editable_1_new" class="btn green">
+								新建角色 <i class="icon-plus"></i>
+							</button>
 						</div>
-						<div class="span6">
-							<div class="dataTables_filter" id="sample_editable_1_filter">
-								<label>Search: <input type="text"
-									aria-controls="sample_editable_1" class="m-wrap medium"></label>
-							</div>
+						<div class="btn-group pull-right">
+							<button class="btn dropdown-toggle" data-toggle="dropdown">
+								操作 <i class="icon-angle-down"></i>
+							</button>
+							<ul class="dropdown-menu">
+								<li><a href="#">打印</a></li>
+								<li><a href="#">保存为PDF</a></li>
+								<li><a href="#">导出到Excel</a></li>
+							</ul>
 						</div>
 					</div>
-					<table
-						class="table table-striped table-hover table-bordered dataTable"
-						id="sample_editable_1" aria-describedby="sample_editable_1_info"
-						style="width: 1067px;">
-						<thead>
-							<tr role="row">
-								<th class="sorting" role="columnheader" tabindex="0" 
-								    aria-controls="sample_editable_1" rowspan="1" colspan="1"
-									style="width: 30px;"
-									aria-label="ID: activate to sort column ascending">ID</th>
-								<th class="sorting" role="columnheader" tabindex="0"
-									aria-controls="sample_editable_1" rowspan="1" colspan="1"
-									style="width: 30px;"
-									aria-label="PID: activate to sort column ascending">PID</th>
-								<th class="sorting_desc" role="columnheader" tabindex="0"
-									aria-controls="sample_editable_1" rowspan="1" colspan="1"
-									style="width: 100px;" aria-sort="descending"
-									aria-label="Role Name: activate to sort column ascending">角色名称</th>
-								<th class="sorting" role="columnheader" tabindex="0"
-									aria-controls="sample_editable_1" rowspan="1" colspan="1"
-									style="width: 150px;"
-									aria-label="Remark: activate to sort column ascending">角色描述</th>
-								<th class="sorting" role="columnheader" tabindex="0"
-									aria-controls="sample_editable_1" rowspan="1" colspan="1"
-									style="width: 50px;"
-									aria-label="Status: activate to sort column ascending">是否开启</th>
-								<th class="sorting" role="columnheader" tabindex="0"
-									aria-controls="sample_editable_1" rowspan="1" colspan="1"
-									style="width: 30px;"
-									aria-label="Edit: activate to sort column ascending">编辑</th>
-								<th class="sorting" role="columnheader" tabindex="0"
-									aria-controls="sample_editable_1" rowspan="1" colspan="1"
-									style="width: 30px;"
-									aria-label="Delete: activate to sort column ascending">删除</th>
-							</tr>
-						</thead>
-
-						<tbody role="alert" aria-live="polite" aria-relevant="all">
-							<volist name="roles" id="vo">
-								<tr class="odd">
-									<td class="">{$vo.id}</td>
-									<td class="">{$vo.Pid}</td>
-									<td class=" sorting_1">{$vo.name}</td>
-									<td class=" ">{$vo.remark}</td>
-									<td class="center ">{$vo.status}</td>
-									<td class=" "><a class="edit" href="javascript:;">Edit</a></td>
-									<td class=" "><a class="delete" href="javascript:;">Delete</a></td>
+						<table
+							class="table table-striped table-hover table-bordered dataTable"
+							id="sample_editable_1" aria-describedby="sample_editable_1_info"
+							style="width: 1067px;">
+							<thead>
+								<tr role="row">
+									<th class="sorting" role="columnheader" tabindex="0" 
+									    aria-controls="sample_editable_1" rowspan="1" colspan="1"
+										style="width: 30px;"
+										aria-label="ID: activate to sort column ascending">ID</th>
+									<th class="sorting" role="columnheader" tabindex="0"
+										aria-controls="sample_editable_1" rowspan="1" colspan="1"
+										style="width: 30px;"
+										aria-label="PID: activate to sort column ascending">PID</th>
+									<th class="sorting_desc" role="columnheader" tabindex="0"
+										aria-controls="sample_editable_1" rowspan="1" colspan="1"
+										style="width: 100px;" aria-sort="descending"
+										aria-label="Role Name: activate to sort column ascending">角色名称</th>
+									<th class="sorting" role="columnheader" tabindex="0"
+										aria-controls="sample_editable_1" rowspan="1" colspan="1"
+										style="width: 150px;"
+										aria-label="Remark: activate to sort column ascending">角色描述</th>
+									<th class="sorting" role="columnheader" tabindex="0"
+										aria-controls="sample_editable_1" rowspan="1" colspan="1"
+										style="width: 50px;"
+										aria-label="Status: activate to sort column ascending">是否开启</th>
+									<th class="sorting" role="columnheader" tabindex="0"
+										aria-controls="sample_editable_1" rowspan="1" colspan="1"
+										style="width: 30px;"
+										aria-label="Edit: activate to sort column ascending">编辑</th>
+									<th class="sorting" role="columnheader" tabindex="0"
+										aria-controls="sample_editable_1" rowspan="1" colspan="1"
+										style="width: 30px;"
+										aria-label="Delete: activate to sort column ascending">删除</th>
 								</tr>
-                            </volist>
-						</tbody>
-					</table>
-					<div class="row-fluid">
-						<div class="span6">
-							<div class="dataTables_info" id="sample_editable_1_info">Showing
-								1 to 8 of 8 entries</div>
-						</div>
-						<div class="span6">
-							<div class="dataTables_paginate paging_bootstrap pagination">
-								<ul>
-									<li class="prev disabled"><a href="#">← Previous</a></li>
-									<li class="active"><a href="#">1</a></li>
-									<li class="next disabled"><a href="#">Next → </a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
+							</thead>
+	
+							<tbody role="alert" aria-live="polite" aria-relevant="all">
+								<volist name="roles" id="vo">
+									<tr>
+										<td class="">{$vo.id}</td>
+										<td class="">{$vo.Pid}</td>
+										<td class=" sorting_1">{$vo.name}</td>
+										<td class=" ">{$vo.remark}</td>
+										<td class="center ">{$vo.status}</td>
+										<td class=" "><a class="edit" href="javascript:;">Edit</a></td>
+										<td class=" "><a class="delete" href="javascript:;">Delete</a></td>
+									</tr>
+	                            </volist>
+							</tbody>
+						</table>
 				</div>
 			</div>
+			<!-- END EXAMPLE TABLE PORTLET-->
 		</div>
-		<!-- END EXAMPLE TABLE PORTLET-->
 	</div>
-</div>
-<!-- END PAGE CONTENT-->
+	<!-- END PAGE CONTENT-->
+</block>
+
+<block name="foot-js">
+	<script src="__METRONIC__/assets/js/jquery-1.8.3.min.js"></script>	
+	<script src="__METRONIC__/assets/breakpoints/breakpoints.js"></script>	
+	<script src="__METRONIC__/assets/bootstrap/js/bootstrap.min.js"></script>		
+	<script src="__METRONIC__/assets/js/jquery.blockui.js"></script>
+	<script src="__METRONIC__/assets/js/jquery.cookie.js"></script>
+	<!-- ie8 fixes -->
+	<!--[if lt IE 9]>
+	<script src="__METRONIC__/assets/js/excanvas.js"></script>
+	<script src="__METRONIC__/assets/js/respond.js"></script>
+	<![endif]-->	
+	<script type="text/javascript" src="__METRONIC__/assets/uniform/jquery.uniform.min.js"></script>
+	<script type="text/javascript" src="__METRONIC__/assets/data-tables/jquery.dataTables.js"></script>
+	<script type="text/javascript" src="__METRONIC__/assets/data-tables/DT_bootstrap.js"></script>
+	<script src="__METRONIC__/assets/js/app.js"></script>		
+	<script>
+		jQuery(document).ready(function() {			
+			// initiate layout and plugins
+			App.setPage("table_editable");
+			App.init();
+		});
+	</script>
 </block>
