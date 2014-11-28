@@ -20,7 +20,7 @@
 	<div class="row-fluid">
 	   <div class="span12">
 	      <!-- BEGIN PAGE TITLE & BREADCRUMB-->
-	      <h3 class="page-title">角色管理</small>
+	      <h3 class="page-title">权限管理</small>
 	      </h3>
 	      <ul class="breadcrumb">
 	         <li>
@@ -29,10 +29,10 @@
 	            <span class="icon-angle-right"></span>
 	         </li>
 	         <li>
-	            <a href="{:U('Rbac/roleList')}">权限管理</a>
+	            <a href="{:U('Rbac/nodeList')}">权限管理</a>
 	            <span class="icon-angle-right"></span>
 	         </li>
-	         <li><a href="{:U('Rbac/roleList')}">角色管理</a></li>
+	         <li><a href="{:U('Rbac/nodeList')}">权限管理</a></li>
 	      </ul>
 	      <!-- END PAGE TITLE & BREADCRUMB-->
 	   </div>
@@ -76,9 +76,9 @@
 			</a>
 			<ul class="sub">
 				<li ><a href="{:U('Rbac/addRole')}">添加角色</a></li>
-				<li class="active"><a href="{:U('Rbac/roleList')}">角色管理</a></li>
+				<li ><a href="{:U('Rbac/roleList')}">角色管理</a></li>
 				<li ><a href="{:U('Rbac/addNode')}">添加权限</a></li>
-				<li ><a href="{:U('Rbac/nodelist')}">权限管理</a></li>
+				<li class="active"><a href="{:U('Rbac/nodelist')}">权限管理</a></li>
 				<li ><a href="ui_tiles.html">添加用户</a></li>
 				<li ><a href="ui_typography.html">用户管理</a></li>
 			</ul>
@@ -119,7 +119,7 @@
 			<div class="portlet box blue">
 				<div class="portlet-title">
 					<h4>
-						<i class="icon-edit"></i>角色管理
+						<i class="icon-edit"></i>权限管理
 					</h4>
 					<div class="tools">
 						<a href="javascript:;" class="collapse"></a> <a
@@ -132,7 +132,7 @@
 					<div class="clearfix">
 						<div class="btn-group">
 							<button id="sample_editable_1_new" class="btn green">
-								新建角色 <i class="icon-plus"></i>
+								新建权限<i class="icon-plus"></i>
 							</button>
 						</div>
 						<div class="btn-group pull-right">
@@ -157,14 +157,23 @@
 										aria-label="ID: activate to sort column ascending">ID</th>
 									<th class="sorting" role="columnheader" tabindex="0"
 										aria-controls="sample_editable_1" rowspan="1" colspan="1"
-										aria-label="PID: activate to sort column ascending">PID</th>
+										aria-label="PID: activate to sort column ascending">父节点</th>
+									<th class="sorting" role="columnheader" tabindex="0"
+										aria-controls="sample_editable_1" rowspan="1" colspan="1"
+										aria-label="Title: activate to sort column ascending">权限结构</th>
 									<th class="sorting_desc" role="columnheader" tabindex="0"
 										aria-controls="sample_editable_1" rowspan="1" colspan="1"
 										aria-sort="descending"
-										aria-label="Role Name: activate to sort column ascending">角色名称</th>
+										aria-label="Name: activate to sort column ascending">名称</th>
 									<th class="sorting" role="columnheader" tabindex="0"
 										aria-controls="sample_editable_1" rowspan="1" colspan="1"
-										aria-label="Remark: activate to sort column ascending">角色描述</th>
+										aria-label="Level: activate to sort column ascending">类型</th>
+									<th class="sorting" role="columnheader" tabindex="0"
+										aria-controls="sample_editable_1" rowspan="1" colspan="1"
+										aria-label="Sort: activate to sort column ascending">排序</th>
+									<th class="sorting" role="columnheader" tabindex="0"
+										aria-controls="sample_editable_1" rowspan="1" colspan="1"
+										aria-label="Remark: activate to sort column ascending">备注</th>
 									<th class="sorting" role="columnheader" tabindex="0"
 										aria-controls="sample_editable_1" rowspan="1" colspan="1"
 										aria-label="Status: activate to sort column ascending">是否开启</th>
@@ -178,15 +187,29 @@
 							</thead>
 	
 							<tbody role="alert" aria-live="polite" aria-relevant="all">
-								<volist name="roles" id="vo">
+								<volist name="nodes" id="vo">
 									<tr>
 										<td class="">{$vo.id}</td>
-										<td class="">{$vo.Pid}</td>
-										<td class=" sorting_1">{$vo.name}</td>
+										<td class="">{$vo.pid}</td>
+										<td class="" style="text-indent: {$vo['level']*20}px;">{$vo.title}</td>
+										<td class="">{$vo.name}</td>										
+										<td class="">
+										    <switch name="vo.level">
+										        <case value="1"><span style="color:green">项目</span></case>
+										        <case value="2"><span style="color:blue">模块</span></case>
+										        <default />操作
+										    </switch>
+										</td>
+										<td class=" sorting_1">{$vo.sort}</td>
 										<td class=" ">{$vo.remark}</td>
-										<td class="center ">{$vo.status}</td>
-										<td class=" "><a class="edit" href="javascript:;">Edit</a></td>
-										<td class=" "><a class="delete" href="javascript:;">Delete</a></td>
+										<td class="center ">
+										    <switch name="vo.status">
+										        <case value="1"><span style="color:green">启用</span></case>
+										        <default /><span style="color:red">禁用</span>
+										    </switch>
+										</td>
+										<td class=" "><a class="edit" href="javascript:;">编辑</a></td>
+										<td class=" "><a class="delete" href="javascript:;">删除</a></td>
 									</tr>
 	                            </volist>
 							</tbody>

@@ -25,7 +25,7 @@
 <div class="row-fluid">
    <div class="span12">
       <!-- BEGIN PAGE TITLE & BREADCRUMB-->
-      <h3 class="page-title">添加角色</small>
+      <h3 class="page-title">添加权限</small>
       </h3>
       <ul class="breadcrumb">
          <li>
@@ -34,10 +34,10 @@
             <span class="icon-angle-right"></span>
          </li>
          <li>
-            <a href="{:U('Rbac/addRole')}">权限管理</a>
+            <a href="{:U('Rbac/addNode')}">权限管理</a>
             <span class="icon-angle-right"></span>
          </li>
-         <li><a href="{:U('Rbac/addRole')}">添加角色</a></li>
+         <li><a href="{:U('Rbac/addNode')}">添加权限</a></li>
       </ul>
       <!-- END PAGE TITLE & BREADCRUMB-->
    </div>
@@ -80,9 +80,9 @@
 			<span class="arrow open"></span>
 			</a>
 			<ul class="sub">
-				<li class="active"><a href="{:U('Rbac/addRole')}">添加角色</a></li>
+				<li ><a href="{:U('Rbac/addRole')}">添加角色</a></li>
 				<li ><a href="{:U('Rbac/roleList')}">角色管理</a></li>
-				<li ><a href="{:U('Rbac/addNode')}">添加权限</a></li>
+				<li class="active"><a href="{:U('Rbac/addNode')}">添加权限</a></li>
 				<li ><a href="{:U('Rbac/nodelist')}">权限管理</a></li>
 				<li ><a href="ui_tiles.html">添加用户</a></li>
 				<li ><a href="ui_typography.html">用户管理</a></li>
@@ -122,7 +122,7 @@
 	<div class="span12">
 	<div class="portlet box blue">
 	<div class="portlet-title">
-	   <h4><i class="icon-reorder"></i>添加角色</h4>
+	   <h4><i class="icon-reorder"></i>添加权限</h4>
 	   <div class="tools">
 	      <a href="javascript:;" class="collapse"></a>
 	      <a href="#portlet-config" data-toggle="modal" class="config"></a>
@@ -132,17 +132,17 @@
 	</div>
 	<div class="portlet-body form">
 	   <!-- BEGIN FORM-->
-        <form action="{:U('Rbac/addRoleHandler')}" method="post" class="form-horizontal form-row-seperated">
+        <form action="{:U('Rbac/addNodeHandler')}" method="post" class="form-horizontal form-row-seperated">
          <div class="control-group">
-            <label class="control-label">角色名称</label>
+            <label class="control-label">英文名称</label>
             <div class="controls">
                <input type="text" name="name" placeholder="" class="m-wrap span6">
             </div>
          </div>
          <div class="control-group">
-            <label class="control-label">角色描述</label>
+            <label class="control-label">中文描述</label>
             <div class="controls">
-               <input type="text" name="remark" placeholder="" class="m-wrap span6">
+               <input type="text" name="title" placeholder="" class="m-wrap span6">
             </div>
          </div>
          <div class="control-group">
@@ -152,6 +152,33 @@
                <span class="checked"><input type="radio" name="status" value="1" checked="" style="opacity: 0;"></span></div>是</label>
                <label class="radio"><div class="radio" id="uniform-undefined">
                <span><input type="radio" name="status" value="0" style="opacity: 0;"></span></div>否</label>  
+            </div>
+         </div>
+         <div class="control-group">
+             <label class="control-label">类型</label>
+             <div class="controls">
+                <select class="small m-wrap" tabindex="1" name="level">
+                   <option value="1">项目</option>
+                   <option value="2">模块</option>
+                   <option value="3">操作</option>
+                </select>
+             </div>
+          </div>
+          <div class="control-group">
+             <label class="control-label">父节点</label>
+             <div class="controls">
+                <select class="small m-wrap" tabindex="1" name="pid">
+                   <option value="0">根节点</option>
+                   <volist name="nodes" id="vo">
+                       <option value="{$vo.id}"><if condition="$vo.level eq 1">{$vo.title}<else />&nbsp;&nbsp;&nbsp;|&nbsp;{$vo.title}</if></option>
+                   </volist>
+                </select>
+             </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label">排序</label>
+            <div class="controls">
+               <input type="text" name="sort" placeholder="" class="m-wrap span6">
             </div>
          </div>
          <div class="form-actions">
