@@ -2292,7 +2292,19 @@ var App = function () {
             oTable.fnDraw();
         }
 
-        var oTable = $('#sample_editable_1').dataTable();
+        var oTable = $('#sample_editable_1').dataTable({
+        	"bSort": false, //禁用列排序
+        	"oLanguage": { //本地化语言
+                "sLengthMenu": "每页显示  _MENU_ 条记录",
+                "sZeroRecords": "Nothing found - sorry",
+                "sInfo": "当前第 _START_ 至 _END_ 条 / 共 _TOTAL_ 条",
+                "sInfoEmpty": "Showing 0 to 0 of 0 records",
+                "sInfoFiltered": "(filtered from _MAX_ total records)",
+                "sSearch": "搜索",
+                "sPrevious": "上页",
+                "sPageNext": "下页",
+            }
+        });
         jQuery('#sample_editable_1_wrapper .dataTables_filter input').addClass("m-wrap medium"); // modify table search input
         jQuery('#sample_editable_1_wrapper .dataTables_length select').addClass("m-wrap xsmall"); // modify table per page dropdown
 
@@ -2310,13 +2322,15 @@ var App = function () {
         $('#sample_editable_1 a.delete').live('click', function (e) {
             e.preventDefault();
 
-            if (confirm("Are you sure to delete this row ?") == false) {
+            if (confirm("你确定删除此记录吗 ?") == false) {
+            //if (confirm("Are you sure to delete this row ?") == false) {
                 return;
             }
 
             var nRow = $(this).parents('tr')[0];
             oTable.fnDeleteRow(nRow);
-            alert("Deleted! Do not forget to do some ajax to sync with backend :)");
+            //alert("Deleted! Do not forget to do some ajax to sync with backend :)");
+            alert("记录已删除! 请在后台通过AJAX同步删除数据库记录 :)");
         });
 
         $('#sample_editable_1 a.cancel').live('click', function (e) {

@@ -40,77 +40,6 @@
 	<!-- END PAGE HEADER-->
 </block>
 
-<block name="page-sidebar">
-	<!-- BEGIN SIDEBAR -->
-	<div class="page-sidebar nav-collapse collapse">
-	<!-- BEGIN SIDEBAR MENU -->        	
-	<ul>
-		<li>
-			<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-			<div class="sidebar-toggler hidden-phone"></div>
-			<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-		</li>
-		<li>
-			<!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
-			<form class="sidebar-search">
-				<div class="input-box">
-					<a href="javascript:;" class="remove"></a>
-					<input type="text" placeholder="搜索...">				
-					<input type="button" class="submit" value=" ">
-				</div>
-			</form>
-			<!-- END RESPONSIVE QUICK SEARCH FORM -->
-		</li>
-		<li class="start ">
-			<a href="{:U('Index/index')}">
-			<i class="icon-home"></i> 
-			<span class="title">管理控制台</span>
-			</a>
-		</li>
-		<li class="active has-sub ">
-			<a href="javascript:;">
-			<i class="icon-bookmark-empty"></i> 
-			<span class="title">权限管理</span>
-			<span class="selected"></span>
-			<span class="arrow open"></span>
-			</a>
-			<ul class="sub">
-				<li ><a href="{:U('Rbac/addRole')}">添加角色</a></li>
-				<li class="active"><a href="{:U('Rbac/roleList')}">角色管理</a></li>
-				<li ><a href="{:U('Rbac/addNode')}">添加权限</a></li>
-				<li ><a href="{:U('Rbac/nodelist')}">权限管理</a></li>
-				<li ><a href="ui_tiles.html">添加用户</a></li>
-				<li ><a href="ui_typography.html">用户管理</a></li>
-			</ul>
-		</li>
-		<li class="has-sub ">
-			<a href="javascript:;">
-			<i class="icon-table"></i> 
-			<span class="title">文章管理</span>
-			<span class="arrow "></span>
-			</a>
-			<ul class="sub">
-				<li ><a href="form_layout.html">发布文章</a></li>
-				<li ><a href="form_samples.html">删除文章</a></li>
-				<li ><a href="form_component.html">修改文章</a></li>
-			</ul>
-		</li>
-		<li class="has-sub ">
-			<a href="javascript:;">
-			<i class="icon-th-list"></i> 
-			<span class="title">安全处理</span>
-			<span class="arrow "></span>
-			</a>
-			<ul class="sub">
-				<li ><a href="table_basic.html">安全退出</a></li>
-			</ul>
-		</li>
-	</ul>
-	<!-- END SIDEBAR MENU -->
-	</div>
-    <!-- END SIDEBAR -->
-</block>
-
 <block name="page-content">
 	<!-- BEGIN PAGE CONTENT-->
 	<div class="row-fluid">
@@ -185,8 +114,9 @@
 										<td class=" sorting_1">{$vo.name}</td>
 										<td class=" ">{$vo.remark}</td>
 										<td class="center ">{$vo.status}</td>
-										<td class=" "><a class="edit" href="javascript:;">Edit</a></td>
-										<td class=" "><a class="delete" href="javascript:;">Delete</a></td>
+										<td class=" "><a class="edit" href="javascript:;">编辑</a></td>
+										<td class=" "><a class="delete" href="javascript:;">删除</a></td>
+										<!-- <td class=" "><a class="" href="{:U('Rbac/delRole', array('roleid' => $vo['id']))}">删除</a></td> -->
 									</tr>
 	                            </volist>
 							</tbody>

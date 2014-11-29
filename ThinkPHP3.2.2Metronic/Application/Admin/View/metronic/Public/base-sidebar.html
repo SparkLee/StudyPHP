@@ -18,26 +18,26 @@
 		</form>
 		<!-- END RESPONSIVE QUICK SEARCH FORM -->
 	</li>
-	<li class="start active ">
+	<li class="start <if condition="CONTROLLER_NAME eq 'Index'">active</if>">
 		<a href="{:U('Index/index')}">
 		<i class="icon-home"></i> 
-		<span class="title">管理控制台</span>
+		<span class="title">管理控制台</php></span>
 		<span class="selected"></span>
 		</a>
 	</li>
-	<li class="has-sub">
+	<li class="has-sub <if condition="CONTROLLER_NAME eq 'Rbac'">active</if>">
 		<a href="javascript:;">
 		<i class="icon-bookmark-empty"></i> 
 		<span class="title">权限管理</span>
 		<span class="arrow "></span>
 		</a>
 		<ul class="sub">
-			<li ><a href="{:U('Rbac/addRole')}">添加角色</a></li>
-			<li ><a href="{:U('Rbac/roleList')}">角色管理</a></li>
-			<li ><a href="ui_tabs_accordions.html">添加权限</a></li>
-			<li ><a href="ui_sliders.html">权限管理</a></li>
-			<li ><a href="ui_tiles.html">添加用户</a></li>
-			<li ><a href="ui_typography.html">用户管理</a></li>
+			<li class="<if condition="ACTION_NAME eq 'addRole'">active</if>"><a href="{:U('Rbac/addRole')}">添加角色</a></li>
+			<li class="<if condition="ACTION_NAME eq 'roleList'">active</if>"><a href="{:U('Rbac/roleList')}">角色管理</a></li>
+			<li class="<if condition="ACTION_NAME eq 'addNode'">active</if>"><a href="{:U('Rbac/addNode')}">添加权限</a></li>
+			<li class="<if condition="ACTION_NAME eq 'nodeList'">active</if>"><a href="{:U('Rbac/nodeList')}">权限管理</a></li>
+			<li class="<if condition="ACTION_NAME eq 'addUser'">active</if>"><a href="{:U('Rbac/addUser')}">添加用户</a></li>
+			<li class="<if condition="ACTION_NAME eq 'userList'">active</if>"><a href="{:U('Rbac/userList')}">用户管理</a></li>
 		</ul>
 	</li>
 	<li class="has-sub ">

@@ -25,7 +25,7 @@
 <div class="row-fluid">
    <div class="span12">
       <!-- BEGIN PAGE TITLE & BREADCRUMB-->
-      <h3 class="page-title">添加角色</small>
+      <h3 class="page-title">添加用户</small>
       </h3>
       <ul class="breadcrumb">
          <li>
@@ -34,10 +34,10 @@
             <span class="icon-angle-right"></span>
          </li>
          <li>
-            <a href="{:U('Rbac/addRole')}">权限管理</a>
+            <a href="{:U('Rbac/addUser')}">权限管理</a>
             <span class="icon-angle-right"></span>
          </li>
-         <li><a href="{:U('Rbac/addRole')}">添加角色</a></li>
+         <li><a href="{:U('Rbac/addUser')}">添加用户</a></li>
       </ul>
       <!-- END PAGE TITLE & BREADCRUMB-->
    </div>
@@ -51,7 +51,7 @@
 	<div class="span12">
 	<div class="portlet box blue">
 	<div class="portlet-title">
-	   <h4><i class="icon-reorder"></i>添加角色</h4>
+	   <h4><i class="icon-reorder"></i>添加用户</h4>
 	   <div class="tools">
 	      <a href="javascript:;" class="collapse"></a>
 	      <a href="#portlet-config" data-toggle="modal" class="config"></a>
@@ -61,27 +61,28 @@
 	</div>
 	<div class="portlet-body form">
 	   <!-- BEGIN FORM-->
-        <form action="{:U('Rbac/addRoleHandler')}" method="post" class="form-horizontal form-row-seperated">
+        <form action="{:U('Rbac/addUserHandler')}" method="post" class="form-horizontal form-row-seperated">
          <div class="control-group">
-            <label class="control-label">角色名称</label>
+            <label class="control-label">用户名称</label>
             <div class="controls">
-               <input type="text" name="name" placeholder="" class="m-wrap span6">
+               <input type="text" name="username" placeholder="" class="m-wrap span6">
             </div>
          </div>
          <div class="control-group">
-            <label class="control-label">角色描述</label>
+            <label class="control-label">密码</label>
             <div class="controls">
-               <input type="text" name="remark" placeholder="" class="m-wrap span6">
+               <input type="password" name="password" placeholder="" class="m-wrap span6">
             </div>
          </div>
          <div class="control-group">
-            <label class="control-label">是否开启</label>
-            <div class="controls">                                                
-               <label class="radio"><div class="radio" id="uniform-undefined">
-               <span class="checked"><input type="radio" name="status" value="1" checked="" style="opacity: 0;"></span></div>是</label>
-               <label class="radio"><div class="radio" id="uniform-undefined">
-               <span><input type="radio" name="status" value="0" style="opacity: 0;"></span></div>否</label>  
-            </div>
+            <label class="control-label">角色</label>
+            <div class="controls">
+                <select class="small m-wrap" tabindex="1" name="role_id">
+                   <volist name="roles" id="vo">
+                       <option value="{$vo.id}">{$vo.name}</option>
+                   </volist>
+                </select>
+             </div>
          </div>
          <div class="form-actions">
             <button type="submit" class="btn blue"><i class="icon-ok"></i> 保存</button>
