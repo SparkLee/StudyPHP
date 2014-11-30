@@ -103,12 +103,12 @@ class RbacController extends Controller {
         $user = array(
             "username" => I("username"),
             "password" => I("password", "", md5),
-            "logintime" => time(), 
+            "logintime" => time(),
             "loginip" => get_client_ip(),
             "status" => 1
         );
         $uid = M("User")->add($user); // 如果主键是自动增长型 成功后返回值就是最新插入的值
-        
+    
         if ($uid) {
             //用户添加后，则添加用户-角色关系
             $user_role = array(
@@ -129,6 +129,49 @@ class RbacController extends Controller {
      */
     public function userList() {
         $this->users = D("User")->relation(true)->select();
+        $this->display();
+    }
+    
+    /**
+     * 删除用户
+     */
+    public function delUser() {
+        $result = D("User")->relation(true)->delete(I("get.roleid")); //使用关联模型：在删除用户数据的同时，把用户角色表中相应的记录也同步删除。
+        var_dump($result);
+        if ($result) {
+            $this->success("用户删除成功", U("Rbac/userList"));
+        }
+    }
+    
+    /*=================== 权限配置（给角色分配权限）操作 ===================*/
+    /**
+     * 权限配置模板展示
+     */
+    public function access() {
+        $Role = M("Role");
+        $Node = M("Node");
+        $Access = M("Access");
+        
+        $roleid = I("roleid", "", int);
+        $this->rolename = $Role->where( "id = " . $roleid)->getField("name");
+        
+        import("Org.Util.SpkTree");
+        $spkTree = new \SpkTree();
+        
+        $nodes = $Node->order("sort")->select();
+        $nodes = $spkTree->create($nodes);
+        
+        $nodes_with_access = array(); //新的权限列表，带有一个扩展栏目：某个角色是否拥有某个权限的标识位。
+        foreach ($nodes as $node) {
+            $cnt = $Access->where("role_id = {$roleid} AND node_id = {$node['id']}")->select();
+            if ($cnt) {
+                $node['access'] = 1;
+            } else {
+                $node['access'] = 0;
+            }
+            $nodes_with_access[] = $node;
+        }
+        $this->nodes_with_access = $nodes_with_access;
         $this->display();
     }
     

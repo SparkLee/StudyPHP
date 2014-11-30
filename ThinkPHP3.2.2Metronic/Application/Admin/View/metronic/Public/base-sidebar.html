@@ -33,9 +33,9 @@
 		</a>
 		<ul class="sub">
 			<li class="<if condition="ACTION_NAME eq 'addRole'">active</if>"><a href="{:U('Rbac/addRole')}">添加角色</a></li>
-			<li class="<if condition="ACTION_NAME eq 'roleList'">active</if>"><a href="{:U('Rbac/roleList')}">角色管理</a></li>
-			<li class="<if condition="ACTION_NAME eq 'addNode'">active</if>"><a href="{:U('Rbac/addNode')}">添加权限</a></li>
-			<li class="<if condition="ACTION_NAME eq 'nodeList'">active</if>"><a href="{:U('Rbac/nodeList')}">权限管理</a></li>
+			<li class="<if condition="(ACTION_NAME eq 'roleList') OR (ACTION_NAME eq 'access')">active</if>"><a href="{:U('Rbac/roleList')}">角色管理</a></li>
+			<li class="<if condition="ACTION_NAME eq 'addNode'">active</if>"><a href="{:U('Rbac/addNode')}">添加节点</a></li>
+			<li class="<if condition="ACTION_NAME eq 'nodeList'">active</if>"><a href="{:U('Rbac/nodeList')}">节点管理</a></li>
 			<li class="<if condition="ACTION_NAME eq 'addUser'">active</if>"><a href="{:U('Rbac/addUser')}">添加用户</a></li>
 			<li class="<if condition="ACTION_NAME eq 'userList'">active</if>"><a href="{:U('Rbac/userList')}">用户管理</a></li>
 		</ul>

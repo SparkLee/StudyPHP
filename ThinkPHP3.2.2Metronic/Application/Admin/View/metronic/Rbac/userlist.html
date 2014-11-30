@@ -119,8 +119,8 @@
 										<td class=" ">{$vo['Role'][0]['name']}</td>
 										<td class="center ">{$vo.status}</td>
 										<td class=" "><a class="edit" href="javascript:;">编辑</a></td>
-										<td class=" "><a class="delete" href="javascript:;">删除</a></td>
-										<!-- <td class=" "><a class="" href="{:U('Rbac/delRole', array('roleid' => $vo['id']))}">删除</a></td> -->
+										<!-- <td class=" "><a class="delete" href="javascript:;">删除</a></td> -->
+										<td class=" "><a class="" href="{:U('Rbac/delUser', array('roleid' => $vo['id']))}">删除</a></td>
 									</tr>
 	                            </volist>
 							</tbody>

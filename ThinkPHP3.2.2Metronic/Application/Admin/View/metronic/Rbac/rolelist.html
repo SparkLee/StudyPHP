@@ -99,6 +99,9 @@
 										aria-label="Status: activate to sort column ascending">是否开启</th>
 									<th class="sorting" role="columnheader" tabindex="0"
 										aria-controls="sample_editable_1" rowspan="1" colspan="1"
+										aria-label="RoleAccess: activate to sort column ascending">权限配置</th>
+									<th class="sorting" role="columnheader" tabindex="0"
+										aria-controls="sample_editable_1" rowspan="1" colspan="1"
 										aria-label="Edit: activate to sort column ascending">编辑</th>
 									<th class="sorting" role="columnheader" tabindex="0"
 										aria-controls="sample_editable_1" rowspan="1" colspan="1"
@@ -114,6 +117,7 @@
 										<td class=" sorting_1">{$vo.name}</td>
 										<td class=" ">{$vo.remark}</td>
 										<td class="center ">{$vo.status}</td>
+										<td class=" "><a href="{:U('Rbac/access', array('roleid' => $vo['id']))}">权限配置</a></td>
 										<td class=" "><a class="edit" href="javascript:;">编辑</a></td>
 										<td class=" "><a class="delete" href="javascript:;">删除</a></td>
 										<!-- <td class=" "><a class="" href="{:U('Rbac/delRole', array('roleid' => $vo['id']))}">删除</a></td> -->
