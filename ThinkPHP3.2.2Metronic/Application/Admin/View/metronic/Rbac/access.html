@@ -73,13 +73,13 @@
 				<div class="controls" style="padding-left: {$vo['level']*30}px; margin-left: 0px;">
 					<label class="checkbox">
 						<div class="checker" id="uniform-undefined">
-						    <span><input type="checkbox" name="checkbox[{$vo.id}]" value="" style="opacity: 0;" <if condition="$vo.access eq '1'"> checked="checked"</if> ></span>
+						    <span><input type="checkbox" name="checkbox[{$vo.id}]" id="{$vo.id}" pid="{$vo.pid}" level="{$vo.level}" value="" style="opacity: 0;" <if condition="$vo.access eq '1'"> checked="checked"</if> ></span>
 						</div> 
 						<switch name="vo.level">
 			    	    	<case value="1"><span style="color:green">[项目]</span></case>
 			    	    	<case value="2"><span style="color:blue">[模块]</span></case>
 			    	    	<case value="3"><span style="">[操作]</span></case>
-			    	    </switch> {$vo.title}
+			    	    </switch> {$vo.title}-Level：{$vo.level}-id：{$vo.id}-pid：{$vo.pid}
 					</label>
 				</div>
 			</div>
@@ -122,6 +122,20 @@
 	<script type="text/javascript" src="__METRONIC__/assets/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
 	<script src="__METRONIC__/assets/js/app.js"></script>     
 	<script>
+	   function batchCheck(obj) { //递归批量勾选
+		   $current_id = $(obj).attr('id');
+		   $current_pid = $(obj).attr('pid');
+		   $current_level = $(obj).attr('level');		   
+	       //alert($current_id + "   " + $current_pid + "   " + $current_level);
+	       
+		   $('input[type=checkbox]').each(function() { //遍历所有复选框
+		       if($(this).attr('pid') == $current_id) {
+		    	   //$(this).click();
+		    	   //alert($(this).attr('id'));
+		       }
+		   });
+	   }
+	   
 	   jQuery(document).ready(function() {       
 	   
 	      // to fix chosen dropdown width in inactive hidden tab content
@@ -131,6 +145,11 @@
 	   
 	      // initiate layout and plugins
 	      App.init();
+	      
+	      //勾选或取消勾选某个复选框时，触发批量勾选动作
+	      $('input[type=checkbox]').click(function (){
+	    	  batchCheck(this);
+	      });
 	   });
 	</script>
 	<!-- END JAVASCRIPTS -->  
