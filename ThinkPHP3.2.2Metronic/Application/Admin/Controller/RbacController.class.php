@@ -153,6 +153,7 @@ class RbacController extends Controller {
         $Access = M("Access");
         
         $roleid = I("roleid", "", int);
+        dump(I("checkbox"));
         $this->rolename = $Role->where( "id = " . $roleid)->getField("name");
         
         import("Org.Util.SpkTree");

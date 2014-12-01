@@ -73,7 +73,9 @@
 				<div class="controls" style="padding-left: {$vo['level']*30}px; margin-left: 0px;">
 					<label class="checkbox">
 						<div class="checker" id="uniform-undefined">
-						    <span><input type="checkbox" name="checkbox[{$vo.id}]" id="{$vo.id}" pid="{$vo.pid}" level="{$vo.level}" value="" style="opacity: 0;" <if condition="$vo.access eq '1'"> checked="checked"</if> ></span>
+						    <span>
+						        <input type="checkbox" name="checkbox[{$vo.id}]" id="{$vo.id}" pid="{$vo.pid}" level="{$vo.level}" value="" style="opacity: 0;" <if condition="$vo.access eq '1'"> checked="checked"</if> >
+						    </span>
 						</div> 
 						<switch name="vo.level">
 			    	    	<case value="1"><span style="color:green">[项目]</span></case>
@@ -122,16 +124,21 @@
 	<script type="text/javascript" src="__METRONIC__/assets/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
 	<script src="__METRONIC__/assets/js/app.js"></script>     
 	<script>
-	   function batchCheck(obj) { //递归批量勾选
-		   $current_id = $(obj).attr('id');
+	   function batchCheck(obj) { //勾选/取消勾选某个复选框时，触发批量勾选/取消勾选所有下级复选框
+		   $current_id = $(obj).attr('id'); //obj：是当前被点击的复选框
 		   $current_pid = $(obj).attr('pid');
-		   $current_level = $(obj).attr('level');		   
-	       //alert($current_id + "   " + $current_pid + "   " + $current_level);
+		   $current_level = $(obj).attr('level');
+		   $current_checked = $(obj).attr('checked');
 	       
-		   $('input[type=checkbox]').each(function() { //遍历所有复选框
+		   $('input[type=checkbox]').each(function() { //递归遍历所有复选框
 		       if($(this).attr('pid') == $current_id) {
-		    	   //$(this).click();
-		    	   //alert($(this).attr('id'));
+		    	   $item_span = $("#uniform-" + $(this).attr('id') + " span"); //Metronic后台模板的特性：复选框的外层div的id属性被自动转置为"uniform-复选框的id"。
+		    	   $item_input = $("#uniform-" + $(this).attr('id') + " input");
+		    	   
+		    	   $item_span.attr("class",  $("#uniform-" + $current_id + " span").attr("class"));//当复选框被选中后，其外层span的class属性会被自动置为checked。需要被级联勾选/取消勾选的子复选框保持与被点击复选框的相应属性一致即可。
+		    	   $item_input.attr("checked", $current_checked); //需要被级联勾选/取消勾选的子复选框保持与被点击复选框的相应属性一致即可。
+		       
+		    	   //batchCheck(this); //递归操作
 		       }
 		   });
 	   }
@@ -146,9 +153,9 @@
 	      // initiate layout and plugins
 	      App.init();
 	      
-	      //勾选或取消勾选某个复选框时，触发批量勾选动作
+	    //勾选/取消勾选某个复选框时，触发批量勾选/取消勾选所有下级复选框
 	      $('input[type=checkbox]').click(function (){
-	    	  batchCheck(this);
+	          batchCheck(this);
 	      });
 	   });
 	</script>
