@@ -81,14 +81,13 @@
 			    	    	<case value="1"><span style="color:green">[项目]</span></case>
 			    	    	<case value="2"><span style="color:blue">[模块]</span></case>
 			    	    	<case value="3"><span style="">[操作]</span></case>
-			    	    </switch> {$vo.title}-Level：{$vo.level}-id：{$vo.id}-pid：{$vo.pid}
+			    	    </switch> {$vo.title}
 					</label>
 				</div>
 			</div>
          </volist>
          <div class="form-actions">
             <button type="submit" class="btn blue"><i class="icon-ok"></i> 保存</button>
-            <button type="reset" class="btn">重置</button>
          </div>
       </form>
       <!-- END FORM-->
@@ -126,6 +125,7 @@
 	<script>
 	   function batchCheck(obj) { //勾选/取消勾选某个复选框时，触发批量勾选/取消勾选所有下级复选框
 		   $current_id = $(obj).attr('id'); //obj：是当前被点击的复选框
+		   //$(obj).attr("checked", $("#uniform-" + $current_id + " span").attr("class"));
 		   $current_pid = $(obj).attr('pid');
 		   $current_level = $(obj).attr('level');
 		   $current_checked = $(obj).attr('checked');
@@ -143,7 +143,7 @@
 		   });
 	   }
 	   
-	   jQuery(document).ready(function() {       
+	   jQuery(document).ready(function() {      
 	   
 	      // to fix chosen dropdown width in inactive hidden tab content
 	      $('.advance_form_with_chosen_element').on('shown', function (e) {
@@ -155,7 +155,7 @@
 	      
 	    //勾选/取消勾选某个复选框时，触发批量勾选/取消勾选所有下级复选框
 	      $('input[type=checkbox]').click(function (){
-	          batchCheck(this);
+	          //batchCheck(this);
 	      });
 	   });
 	</script>
