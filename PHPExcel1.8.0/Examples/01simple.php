@@ -29,7 +29,8 @@
 error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
 ini_set('display_startup_errors', TRUE);
-date_default_timezone_set('Europe/London');
+//date_default_timezone_set('Europe/London');
+date_default_timezone_set('Asia/Shanghai');
 
 define('EOL',(PHP_SAPI == 'cli') ? PHP_EOL : '<br />');
 
@@ -43,8 +44,8 @@ $objPHPExcel = new PHPExcel();
 
 // Set document properties
 echo date('H:i:s') , " Set document properties" , EOL;
-$objPHPExcel->getProperties()->setCreator("Maarten Balliauw")
-							 ->setLastModifiedBy("Maarten Balliauw")
+$objPHPExcel->getProperties()->setCreator("李威")
+							 ->setLastModifiedBy("Wei Li")
 							 ->setTitle("PHPExcel Test Document")
 							 ->setSubject("PHPExcel Test Document")
 							 ->setDescription("Test document for PHPExcel, generated using PHP classes.")
@@ -68,12 +69,12 @@ $objPHPExcel->setActiveSheetIndex(0)
 
 $objPHPExcel->getActiveSheet()->setCellValue('A8',"Hello\nWorld");
 $objPHPExcel->getActiveSheet()->getRowDimension(8)->setRowHeight(-1);
-$objPHPExcel->getActiveSheet()->getStyle('A8')->getAlignment()->setWrapText(true);
+$objPHPExcel->getActiveSheet()->getStyle('A8')->getAlignment()->setWrapText(false);
 
 
 // Rename worksheet
 echo date('H:i:s') , " Rename worksheet" , EOL;
-$objPHPExcel->getActiveSheet()->setTitle('Simple');
+$objPHPExcel->getActiveSheet()->setTitle('Spark First WorkSheet');
 
 
 // Set active sheet index to the first sheet, so Excel opens this as the first sheet
@@ -86,6 +87,7 @@ $callStartTime = microtime(true);
 
 $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
 $objWriter->save(str_replace('.php', '.xlsx', __FILE__));
+$objWriter->save('SparkLee Test.xlsx');
 $callEndTime = microtime(true);
 $callTime = $callEndTime - $callStartTime;
 
