@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns="http://logging.apache.org/log4php/">
+    <appender name="myEchoAppender" class="LoggerAppenderEcho">
+        <param name="htmlLineBreaks" value="true" />
+    </appender>
+    <appender name="myFileAppender" class="LoggerAppenderFile">
+        <param name="file" value="D:\www\php\spk\GitHub-SparkLee\StudyPHP\log4php\test\log\myLog-xml.log" />
+    </appender>
+    <appender name="myMailAppender" class="LoggerAppenderMail">
+    	<param name="to" value="liweijsj@163.com" />
+        <param name="from" value="postmaster@localhost" />
+    </appender>
+    <root>
+        <level value="trace" />
+        <appender_ref ref="myEchoAppender" />
+        <appender_ref ref="myFileAppender" />
+        <appender_ref ref="myMailAppender" />
+    </root>
+</configuration>
