@@ -1,37 +1,58 @@
 <?php
-require 'PHPMailerAutoload.php';
-
-$mail = new PHPMailer;
-
-//$mail->SMTPDebug = 3;                               // Enable verbose debug output
-
-$mail->isSMTP();                                      // Set mailer to use SMTP
-$mail->Host = 'smtp1.example.com;smtp2.example.com';  // Specify main and backup SMTP servers
-$mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'liwei@vriworks.com';               // SMTP username
-$mail->Password = 'vw#2013';                          // SMTP password
-$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-$mail->Port = 465;                                    // TCP port to connect to
-
-$mail->From = 'liwei@vriworks.com';
-$mail->FromName = '服务器监控特工007';
-$mail->addAddress('liwei@vriworks.com', '李威');     // Add a recipient
-//$mail->addAddress('ellen@example.com');               // Name is optional
-$mail->addReplyTo('liweijsj@163.com', '李威');
-$mail->addCC('496374935@qq.com');
-$mail->addBCC('send@vriworks.com');
-
-//$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-//$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
-$mail->isHTML(true);                                  // Set email format to HTML
-
-$mail->Subject = 'Here is the subject';
-$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
-if(!$mail->send()) {
-    echo 'Message could not be sent.';
-    echo 'Mailer Error: ' . $mail->ErrorInfo;
-} else {
-    echo 'Message has been sent';
+require_once 'PHPMailerAutoload.php';
+ 
+$results_messages = array();
+ 
+$mail = new PHPMailer(true);
+$mail->CharSet = 'utf-8';
+ 
+class phpmailerAppException extends phpmailerException {}
+ 
+try {
+$to = 'liweijsj163.com';
+if(!PHPMailer::validateAddress($to)) {
+  throw new phpmailerAppException("收件人地址 " . $to . " 无效 -- 已中止邮件发送!");
+}
+$mail->isSMTP();
+$mail->SMTPDebug  = 2;
+$mail->Host       = "smtp.exmail.qq.com";
+$mail->Port       = "465";
+$mail->SMTPSecure = "ssl";
+$mail->SMTPAuth   = true;
+$mail->Username   = "liwei@vriworks.com";
+$mail->Password   = "vw#2013";
+$mail->addReplyTo("liwei@vriworks.com", "牛逼威");
+$mail->From       = "liwei@vriworks.com";
+$mail->FromName   = "牛逼威";
+$mail->addAddress("liweijsj@163.com", "哈哈奇");
+$mail->addBCC("496374935@qq.com");
+$mail->addCC("send@vriworks.com");
+$mail->Subject  = "测试一下就好(PHPMailer test using SMTP)";
+$body = <<<'EOT'
+噼里啪啦
+EOT;
+$mail->WordWrap = 78;
+$mail->msgHTML($body, dirname(__FILE__), true); //Create message bodies and embed images
+$mail->addAttachment('example/images/phpmailer_mini.png','phpmailer_mini.png');  // optional name
+$mail->addAttachment('example/images/phpmailer.png', 'phpmailer.png');  // optional name
+ 
+try {
+  $mail->send();
+  $results_messages[] = "Message has been sent using SMTP";
+}
+catch (phpmailerException $e) {
+  throw new phpmailerAppException('Unable to send to: ' . $to. ': '.$e->getMessage());
+}
+}
+catch (phpmailerAppException $e) {
+  $results_messages[] = $e->errorMessage();
+}
+ 
+if (count($results_messages) > 0) {
+  echo "<h2>Run results</h2>\n";
+  echo "<ul>\n";
+foreach ($results_messages as $result) {
+  echo "<li>$result</li>\n";
+}
+echo "</ul>\n";
 }
