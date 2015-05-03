@@ -1,7 +1,0 @@
-[ 2014-10-10T09:31:46+08:00 ]  
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000071s ]
-INFO: [ app_init ] --END-- [ RunTime:0.004826s ]
-NOTIC: [8] Undefined index: REQUEST_URI D:\www\spk\GitHub-StudyPHP\trunk\ThinkPHP3.2.2Study\ThinkPHP\Library\Think\Dispatcher.class.php 第 135 行.
-ERR: 无法加载模块:C:\Users\VRIWOR~1\AppData\Local\Temp\dummy
-

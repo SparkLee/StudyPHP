@@ -1,0 +1,5 @@
+后台地址：http://spkweiphp.com/index.php?s=/Admin/Public/login.html
+后台账号：admin + admin
+
+前台地址：http://spkweiphp.com/index.php?s=/home/user/login.html
+前台账号：sparklee + sparklee
