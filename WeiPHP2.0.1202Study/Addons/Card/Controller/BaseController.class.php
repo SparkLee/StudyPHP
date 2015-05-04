@@ -6,8 +6,6 @@ use Home\Controller\AddonsController;
 
 class BaseController extends AddonsController {
 	function _initialize() {
-		parent::_initialize();
-		
 		$controller = strtolower ( _CONTROLLER );
 		
 		$res ['title'] = '会员卡制作';
@@ -25,9 +23,9 @@ class BaseController extends AddonsController {
 		$res ['class'] = $controller == 'notice' ? 'current' : '';
 		$nav [] = $res;
 		
-		$res ['title'] = '优惠券';
-		$res ['url'] = addons_url ( 'Coupon://Coupon/lists' );
-		$res ['class'] = $controller == 'coupon' ? 'current' : '';
+		$res ['title'] = '优惠卷';
+		$res ['url'] = addons_url ( 'Card://coupons/lists' );
+		$res ['class'] = $controller == 'coupons' ? 'current' : '';
 		$nav [] = $res;
 		
 		$this->assign ( 'nav', $nav );

@@ -6,9 +6,6 @@ use Addons\Card\Controller\BaseController;
 
 class CardController extends BaseController {
 	function config() {
-		$normal_tips = '配置完保存后，在微信里回复: 会员卡，即可看到效果。';
-		$this->assign ( 'normal_tips', $normal_tips );
-		
 		$this->getModel ();
 		
 		if (IS_POST) {
@@ -61,7 +58,7 @@ class CardController extends BaseController {
 		// dump($info);
 		// dump(M ( 'card_member' )->getLastSql());
 		if ($info) {
-			$tpl = 'show_card';
+			$tpl = 'showCard';
 			$this->assign ( 'info', $info );
 		}
 		
@@ -88,37 +85,31 @@ class CardController extends BaseController {
 				$res = M ( 'card_member' )->where ( $map )->save ( $data );
 			} else {
 				$config = getAddonConfig ( 'Card' );
-				$map_token ['token'] = get_token ();
-				$data ['number'] = M ( 'card_member' )->where ( $map_token )->getField ( "max(number) as number" );
+				$data ['number'] = M ( 'card_member' )->where ( 'number>' . $config ['length'] . ' AND token=' . get_token () )->getField ( "max(number) as number" );
 				if (empty ( $data ['number'] )) {
 					$data ['number'] = $config ['length'];
 				} else {
 					$data ['number'] += 1;
 				}
 				
-				$data ['uid'] = $map2 ['id'] = $this->mid;
+				$data ['uid'] = $this->mid;
 				$data ['cTime'] = time ();
 				$data ['token'] = get_token ();
 				
 				$res = M ( 'card_member' )->add ( $data );
-				
-				M ( 'follow' )->where ( $map2 )->setField ( 'status', 3 );
-				
-				// 增加积分
-				add_credit ( 'card_bind' );
 			}
 			redirect ( addons_url ( 'Card://Card/showCard' ) );
 		}
 		
 		$this->assign ( 'info', $info );
-		$this->display ( 'write_cardinfo' );
+		$this->display ();
 	}
 	function index() {
 		$this->display ();
 	}
 	// 绑定实体会员卡
 	function bindCard() {
-		$this->display ( 'bind_card' );
+		$this->display ();
 	}
 	// 积分
 	function score() {
@@ -138,6 +129,6 @@ class CardController extends BaseController {
 		$info = M ( 'card_member' )->where ( $map )->find ();
 		$this->assign ( 'info', $info );
 		
-		$this->display ( 'show_card' );
+		$this->display ();
 	}
 }

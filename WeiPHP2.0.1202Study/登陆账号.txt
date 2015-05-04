@@ -1,3 +1,5 @@
+首页地址：
+
 后台地址：http://spkweiphp.com/index.php?s=/Admin/Public/login.html
 后台账号：admin + admin
 

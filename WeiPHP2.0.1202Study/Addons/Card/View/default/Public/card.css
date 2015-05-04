@@ -1,7 +1,6 @@
 @charset "utf-8";
 /* CSS Document by jacy use in vipcard */
 html{ height:100%;}
-.top_line{ background-image:none}
 body{ min-height:100%;background: url(vipbg1.jpg) repeat-y right 0, url(vipbg2.jpg) repeat-y left 0, url(vipbg3.jpg) repeat-x 0 0, url(vipbg4.jpg) repeat 0 0, #864c2c;
 -webkit-background-size: 3.5px 23.5px, 3.5px 23.5px, 304.5px 93px, 313px 23.5px;
 background-size: 3.5px 23.5px, 3.5px 23.5px, 304.5px 93px, 313px 23.5px;}

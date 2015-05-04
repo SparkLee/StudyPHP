@@ -10,23 +10,12 @@ class CouponsController extends BaseController {
 		$this->model = $this->getModel ( 'card_coupons' );
 		parent::_initialize ();
 	}
-	function show() {
+	function show(){
 		$map ['token'] = get_token ();
-		// $map ['addon_condition'] = 3;
-		$list = M ( 'coupon' )->where ( $map )->order ( 'id desc' )->select ();
-		
-		$map ['uid'] = $this->mid;
-		$map ['addon'] = 'Coupon';
-		$code = M ( 'sn_code' )->where ( $map )->select ();
-		foreach ( $code as $c ) {
-			$arr [$c ['target_id']] = 1;
-		}
-		foreach ( $list as &$v ) {
-			$v ['is_use'] = intval ( $arr [$v ['id']] );
-		}
+		$list = M ( 'card_coupons' )->where ( $map )->order ( 'id desc' )->select ();
 		$this->assign ( 'list', $list );
-		
-		$this->display ();
+				
+		$this->display();
 	}
 	// 通用插件的列表模型
 	public function lists() {
