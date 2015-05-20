@@ -1,4 +1,8 @@
 ﻿#################
 ## ThinkPHP运行时缓存文件
 #################
+
+#忽略工程根目录下的VWComputer目录及其所有子目录和文件（这个目录是用于在帷幄公司电脑本地做测试用的，不要上传到git服务器）
+/VWComputer
+
 #OneThink1.0Study/Runtime/haha.txt
