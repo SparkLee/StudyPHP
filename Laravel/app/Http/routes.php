@@ -28,4 +28,5 @@ Route::controllers([
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function()
 {
   Route::get('/', 'AdminHomeController@index');
+  Route::resource('pages', 'PagesController');
 });
