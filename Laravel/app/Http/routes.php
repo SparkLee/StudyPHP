@@ -15,10 +15,10 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('aboutus/', 'AboutusController@index');
 
-Route::get('home', function() {
+/* Route::get('home', function() {
     echo "登陆成功了。";
-});
-//Route::get('home', 'HomeController@index');
+}) */;
+Route::get('home', 'HomeController@index');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
