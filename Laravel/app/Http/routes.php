@@ -11,21 +11,25 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
-
-Route::get('aboutus/', 'AboutusController@index');
-
+Route::get('/', 'HomeController@index');
 /* Route::get('home', function() {
-    echo "登陆成功了。";
-}) */;
-Route::get('home', 'HomeController@index');
+ echo "登陆成功了。";
+    }) */;
+//Route::get('home', 'HomeController@index');
 
-Route::controllers([
+Route::get('aboutus/{name?}', 'AboutusController@index')->where('name', '[A-Za-z]+');
+
+/* Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
-]);
+]); */
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function()
+Route::get('pages/{id}', 'PagesController@show');
+
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth'], function()
 {
   Route::get('/', 'AdminHomeController@index');
   Route::resource('pages', 'PagesController');
