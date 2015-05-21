@@ -1,1 +1,4 @@
 laravel.log
+app/
+framework/
+logs/
