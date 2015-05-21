@@ -1,3 +1,4 @@
 1、Laravel 5 系列入门教程（一）【最适合中国人的 Laravel 教程】：http://lvwenhan.com/laravel/432.html
-
 2、Laravel 5 系列入门教程（二）【最适合中国人的 Laravel 教程】：http://lvwenhan.com/laravel/433.html
+3、Laravel 5 系列入门教程（三）【最适合中国人的 Laravel 教程】：http://lvwenhan.com/laravel/434.html
+4、Laravel 5 系列入门教程（四）【最适合中国人的 Laravel 教程】：http://lvwenhan.com/laravel/435.html
