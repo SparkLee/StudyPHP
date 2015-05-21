@@ -16,7 +16,7 @@ class PagesController extends Controller {
    * @return Response
    */
   public function index() {
-    //
+    return view('admin.pages.index')->withPages(Page::all());
   }
 
   /**
