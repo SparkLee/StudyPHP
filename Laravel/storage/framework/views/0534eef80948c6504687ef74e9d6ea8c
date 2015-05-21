@@ -1,0 +1,61 @@
+<?php $__env->startSection('content'); ?>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="panel panel-default">
+        <div class="panel-heading">评论管理</div>
+
+        <div class="panel-body">
+
+        <table class="table table-striped">
+          <tr class="row">
+            <th class="col-lg-4">留言内容</th>
+            <th class="col-lg-2">访客信息</th>
+            <th class="col-lg-4">标题</th>
+            <th class="col-lg-1">文章标题</th>
+            <th class="col-lg-1">删除</th>
+          </tr>
+          <?php foreach($comments as $comment): ?>
+            <tr class="row">
+              <td class="col-lg-6">
+                <?php echo e($comment->created_at); ?><br>
+                <?php echo e($comment->content); ?>
+
+              </td>
+              <td class="col-lg-2">
+                <?php if($comment->website): ?>
+                  <a href="<?php echo e($comment->website); ?>">
+                    <h4><?php echo e($comment->nickname); ?></h4>
+                  </a>
+                <?php else: ?>
+                  <h3><?php echo e($comment->nickname); ?></h3>
+                <?php endif; ?>
+                <?php echo e($comment->email); ?>
+
+              </td>
+              <td class="col-lg-4">
+                <a href="<?php echo e(URL('pages/'.$comment->page_id)); ?>" target="_blank">
+                </a>
+              </td>
+              <td class="col-lg-1">
+                <a href="<?php echo e(URL('admin/comments/'.$comment->id.'/edit')); ?>" class="btn btn-success">编辑</a>
+              </td>
+              <td class="col-lg-1">
+                <form action="<?php echo e(URL('admin/comments/'.$comment->id)); ?>" method="POST" style="display: inline;">
+                  <input name="_method" type="hidden" value="DELETE">
+                  <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+                  <button type="submit" class="btn btn-danger">删除</button>
+                </form>
+              </td>
+            </tr>
+          <?php endforeach; ?>
+        </table>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
