@@ -2,8 +2,8 @@
 
 @section('content')
 <div id="title" style="text-align: center;">
-		<h1>Learn Laravel 5</h1>
-		<div style="padding: 5px; font-size: 16px;">{{ Inspiring::quote() }}</div>
+		<h1>Laravel 5 伊甸园</h1>
+		<div style="padding: 5px; font-size: 16px; color: rgb(51, 122, 183);">{{ Inspiring::quote() }}</div>
 	</div>
 	<hr>
 	<div id="content">
