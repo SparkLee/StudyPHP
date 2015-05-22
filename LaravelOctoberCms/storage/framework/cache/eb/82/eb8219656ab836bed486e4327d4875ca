@@ -1,0 +1,17 @@
+1432277853s:646:"a:5:{s:5:"mtime";i:1432276486;s:7:"content";s:256:"{% if result %}
+    <span class="lead">
+        The result is <span class="label label-success">{{ result }}</span>
+    </span>
+{% else %}
+    <span class="text-muted">
+        Click the <em>Calculate</em> button to find the answer.
+    </span>
+{% endif %}";s:8:"settings";a:1:{s:10:"components";a:0:{}}s:4:"code";N;s:6:"markup";s:256:"{% if result %}
+    <span class="lead">
+        The result is <span class="label label-success">{{ result }}</span>
+    </span>
+{% else %}
+    <span class="text-muted">
+        Click the <em>Calculate</em> button to find the answer.
+    </span>
+{% endif %}";}";
