@@ -24,6 +24,9 @@
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			    <ul class="nav navbar-nav">
+					<li><a href="/admin">后台首页</a></li>
+				</ul>
 				<ul class="nav navbar-nav">
 					<li><a href="/admin/pages">页面管理</a></li>
 				</ul>
@@ -36,8 +39,8 @@
 
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
-						<li><a href="/auth/login">Login</a></li>
-						<li><a href="/auth/register">Register</a></li>
+						<li><a href="/auth/login">登陆</a></li>
+						<li><a href="/auth/register">注册</a></li>
 					@else
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
@@ -56,5 +59,15 @@
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	
+	<!-- 加载编辑器的容器 -->
+    <script id="container" name="content" type="text/plain">
+      // 这里写你的初始化内容 
+    </script>
+    
+    <!-- 实例化编辑器 -->
+    <script type="text/javascript">
+        var ue = UE.getEditor('container');
+    </script>
 </body>
 </html>
