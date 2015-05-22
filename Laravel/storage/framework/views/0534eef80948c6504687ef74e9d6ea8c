@@ -35,6 +35,8 @@
               </td>
               <td class="col-lg-4">
                 <a href="<?php echo e(URL('pages/'.$comment->page_id)); ?>" target="_blank">
+                  <?php echo e(App\Page::find($comment->page_id)->title); ?>
+
                 </a>
               </td>
               <td class="col-lg-1">

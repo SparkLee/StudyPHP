@@ -35,6 +35,7 @@
               </td>
               <td class="col-lg-4">
                 <a href="{{ URL('pages/'.$comment->page_id) }}" target="_blank">
+                  {{ App\Page::find($comment->page_id)->title }}
                 </a>
               </td>
               <td class="col-lg-1">
