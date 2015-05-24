@@ -5,4 +5,8 @@
 #忽略工程根目录下的VWComputer目录及其所有子目录和文件（这个目录是用于在帷幄公司电脑本地做测试用的，不要上传到git服务器）
 /VWComputer
 
+#忽略ThinkPHP运行时的缓存目录
+/ThinkPHP3.2.2Metronic/Application/Runtime
+
 #OneThink1.0Study/Runtime/haha.txt
+ThinkPHP3.2.2Metronic/Application/Runtime/Cache/Home/3f922d57f5ec0750c411ff84bf7c3f1b.php
