@@ -2,6 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 use Illuminate\Http\Request;
 use App\Page;
@@ -16,7 +17,57 @@ class AdminHomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('admin.index')->withPages(Page::all());
+	  header("Content-type: text/html; charset=utf-8");
+	  
+	  // 根据主键获取某条记录数据
+	  //$page = Page::find(0); var_dump($page->title); exit;
+	  
+	  //  根据主键获取某条记录数据（不到模型数据时抛出异常）
+	  //  注：需要引用模型未找到异常类-use Illuminate\Database\Eloquent\ModelNotFoundException;
+	  /*
+	  try {
+	    $page = Page::findOrFail(14);
+	    var_dump($page->title);
+	    exit;
+	  } catch (ModelNotFoundException $e) {
+	    echo $e->getMessage();
+	    exit;
+	  }	  
+	  
+	  try {
+	  $page = Page::where('title', 'like', '%Laravel=%')->firstOrFail();
+	  var_dump($page->title);
+	  exit;
+	  } catch (ModelNotFoundException $e) {
+	  echo $e->getMessage();
+	  exit;
+	  } */
+	  
+	  // 指定查询条件并获取前10条记录数据
+	  /*
+	  $pages = Page::where('title', 'like', '%Laravel%')->take(10)->get();
+	  foreach ($pages as $p) {
+	    var_dump($p->title);
+	  }
+	  exit; */
+	  
+	  // 获取满足指定查询条件的记录条数
+	  /*
+	  $cnt_pages = Page::where('title', 'like', '%Laravel%')->count();
+	  echo $cnt_pages;
+	  exit; */
+	  
+	  // 如果没办法使用流畅接口产生出查询语句，也可以使用 whereRaw 方法
+	  /*
+	  $cnt_pages = Page::whereRaw('title like ? and body like ?', ['%Laravel%', '%有力保障%'])->count();
+	  echo $cnt_pages;
+	  exit; */
+	  
+	  $data = array(
+	      'pages' => Page::all(),
+	  );
+	  return view('admin.index', $data);
+	  //return view('admin.index')->withPages(Page::all());
 	}
 
 	/**
