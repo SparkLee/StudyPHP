@@ -63,6 +63,18 @@ return [
 			'prefix'    => '',
 			'strict'    => false,
 		],
+		
+		'mysql_211.149.209.33' => [
+    		'driver'    => 'mysql',
+    		'host'      => env('DB_HOST', '211.149.209.33'),
+    		'database'  => env('DB_DATABASE', 'test'),
+    		'username'  => env('DB_USERNAME', 'super'),
+    		'password'  => env('DB_PASSWORD', 'vw1301'),
+    		'charset'   => 'utf8',
+    		'collation' => 'utf8_unicode_ci',
+    		'prefix'    => '',
+    		'strict'    => false,
+		],
 
 		'pgsql' => [
 			'driver'   => 'pgsql',

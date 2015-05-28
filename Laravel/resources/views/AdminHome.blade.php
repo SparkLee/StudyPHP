@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <div class="panel panel-default">
-        <div class="panel-heading">页面管理</div>
+        <div class="panel-heading">后台首页</div>
 
         <div class="panel-body">
 
@@ -14,7 +14,7 @@
           @foreach ($pages as $page)
             <hr>
             <div class="page">
-              <h4><a href="{{ URL('admin/pages/' . $page->id) }}">{{ $page->title }}</a></h4>
+              <h4>{{ $page->title }}</h4>
               <div class="content">
                 <p>
                   {{ $page->body }}

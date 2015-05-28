@@ -63,6 +63,21 @@ class AdminHomeController extends Controller {
 	  echo $cnt_pages;
 	  exit; */
 	  
+	  // 拆分查询：如果您要处理非常多（数千条）Eloquent 查询结果，使用 chunk 方法可以让您顺利工作而不会消耗大量内存
+	  /* @todo 没看懂是神马意思
+	  Page::chunk(1, function($pages) {
+	      var_dump($pages);
+	  });
+	  exit; */
+	  
+	  // 指定查询时连接数据库
+	  /*
+	  $page = Page::find(14);
+	  $page2 = Page::on('mysql_211.149.209.33')->find(14);
+	  var_dump($page);
+	  var_dump($page2);
+	  exit; */
+	  
 	  $data = array(
 	      'pages' => Page::all(),
 	  );
