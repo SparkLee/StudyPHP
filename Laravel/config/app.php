@@ -149,7 +149,7 @@ return [
 		/*
 		 * 百度编辑器
 		 */
-        'Stevenyangecho\UEditor\UEditorServiceProvider',
+        //'Stevenyangecho\UEditor\UEditorServiceProvider',
 
 	],
 
