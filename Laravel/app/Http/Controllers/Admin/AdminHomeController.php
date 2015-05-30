@@ -71,12 +71,81 @@ class AdminHomeController extends Controller {
 	  exit; */
 	  
 	  // 指定查询时连接数据库
-	  /*
-	  $page = Page::find(14);
+	  /* $page = Page::find(14);
 	  $page2 = Page::on('mysql_211.149.209.33')->find(14);
 	  var_dump($page);
 	  var_dump($page2);
+	  exit;  */
+	  
+	  // 储存新的模型数据（使用save方法）
+	  /* $page = new Page;
+	  $page->title = "储存新的模型数据（使用save方法）-我是标题";
+	  $page->body = "储存新的模型数据（使用save方法）-我是内容";
+	  $page->save();
+	  echo "新增记录的ID为：" . $page->id;
 	  exit; */
+	  
+	  // 储存新的模型数据（使用create方法。注：新增前，需要先在模型类里设定好 fillable 或 guarded 属性，因为 Eloquent 默认会防止批量赋值）
+	  /* $page = Page::create(['title' => "储存新的模型数据（使用create方法）-我是标题", 'body' => "储存新的模型数据-我是内容"]);
+	  echo "新增记录的ID为：" . $page->id;
+	  exit; */
+	  // 以属性找记录，若没有则新增并取得新的实例
+	  /* $page = Page::firstOrCreate(['title' => '储存新的模型数据（使用firstOrCreate方法）-我是标题']);
+	  $page = Page::firstOrNew(['title' => '储存新的模型数据（使用firstOrNew方法）-我是标题']); //@todo 此方法似乎无效
+	  echo "新增记录的ID为：" . $page->id;
+	  exit; */
+	  
+	  // 更新取出的模型
+	  /* $page = Page::find(27);
+	  $page->body = "速度太慢，我想屎啊。";
+	  $page->save();
+	  echo "更新记录的ID为：" . $page->id;
+	  exit; */
+
+	  // 结合查询语句，批次更新模型
+	  /* $affectedRows = Page::where('title', 'like', '%储存%')->update(['title' => '就是这么屌']);
+	  echo "更新的记录数：" . $affectedRows;
+	  exit; */
+	  
+	  // 删除模型
+	  /* $page = Page::find(70);
+	  $page->delete();
+	  exit; */
+	  // 按主键值删除模型
+	  //Page::destroy(68);
+	  //Page::destroy(13, 26);
+	  //Page::destroy([28, 29]);
+	  //exit;
+	  // 结合查询语句批次删除模型
+	  /* $affectedRows = Page::where('title', 'like', '%储存%')->delete();
+	  echo "删除的记录数：" . $affectedRows;
+	  exit; */
+	  // 只更新模型的时间戳（updated_at）
+	  /* $page = Page::find(68);
+	  $page->touch();
+	  exit; */
+	  
+	  // 强制查询软删除数据
+	  /* $page = Page::where('title', '<>', '')->get();
+	  $pages2 = Page::withTrashed()->get();
+	  echo "记录数（不包括被软删除的数据）：" . $page->count(); echo "<br>";
+	  echo "记录数（包括被软删除的数据）：" . $pages2->count();
+	  exit; */
+	  
+	  // 只查询被软删除的模型数据
+	  /* $pages = Page::onlyTrashed()->get();
+	  echo "被软删除的记录数：" . $pages->count();
+	  exit; */
+	  
+	  // 恢复被软删除的模型数据
+	  /* $pages = Page::onlyTrashed()->restore();
+	  exit; */
+	  
+	  // 强制删除模型数据（当开启了软删除功能SoftDeletingTrait后）
+	  /* $page = Page::find(71);
+	  $page->forceDelete();
+	  exit; */
+	  
 	  
 	  $data = array(
 	      'pages' => Page::all(),
