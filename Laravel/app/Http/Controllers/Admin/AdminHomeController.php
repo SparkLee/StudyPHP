@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use App\Page;
 use App\Article;
+use App\User;
+use App\Phone;
 
 class AdminHomeController extends Controller {
 
@@ -147,10 +149,22 @@ class AdminHomeController extends Controller {
 	  exit; */
 	  
 	  // 使用（动态）范围查询
-	  $pages = Page::titlebeginspark()->get();
+	  /* $pages = Page::titlebeginspark()->get();
 	  $pages = Page::titlebegin('储存')->withTrashed()->get();
 	  var_dump($pages);
-	  exit;	  
+	  exit; */
+
+	  // 关联：一对一
+	  /* $user = User::find(1);
+	  $phone = $user->phone;
+	  var_dump($phone);
+	  exit; */
+	  
+	  // 关联：相对关联 -> 一对一
+	  $phone = Phone::find(1);
+	  $user = $phone->user;
+	  var_dump($user);
+	  exit;
 	  
 	  $data = array(
 	      'pages' => Page::all(),

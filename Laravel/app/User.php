@@ -30,5 +30,12 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 * @var array
 	 */
 	protected $hidden = ['password', 'remember_token'];
+	
+	/**
+	 * 与模型Phone一对一关联
+	 */
+	public function phone() {
+	    return $this->hasOne('App\Phone');
+	}
 
 }
