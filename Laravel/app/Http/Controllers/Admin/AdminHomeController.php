@@ -9,6 +9,7 @@ use App\Page;
 use App\Article;
 use App\User;
 use App\Phone;
+use App\Comment;
 
 class AdminHomeController extends Controller {
 
@@ -161,9 +162,21 @@ class AdminHomeController extends Controller {
 	  exit; */
 	  
 	  // 关联：相对关联 -> 一对一
-	  $phone = Phone::find(1);
+	  /* $phone = Phone::find(1);
 	  $user = $phone->user;
 	  var_dump($user);
+	  exit; */
+	  
+	  // 关联：一对多
+	  /* $page = Page::find(74);
+	  $comments = $page->Comments;
+	  var_dump($comments);
+	  exit; */
+	  
+	  // 关联：相对关联 -> 一对多
+	  $comment = Comment::find(4);
+	  $page = $comment->page;
+	  var_dump($page);
 	  exit;
 	  
 	  $data = array(
