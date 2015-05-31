@@ -146,6 +146,11 @@ class AdminHomeController extends Controller {
 	  $page->forceDelete();
 	  exit; */
 	  
+	  // 使用（动态）范围查询
+	  $pages = Page::titlebeginspark()->get();
+	  $pages = Page::titlebegin('储存')->withTrashed()->get();
+	  var_dump($pages);
+	  exit;	  
 	  
 	  $data = array(
 	      'pages' => Page::all(),
