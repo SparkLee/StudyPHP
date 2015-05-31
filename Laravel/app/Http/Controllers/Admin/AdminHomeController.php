@@ -10,6 +10,8 @@ use App\Article;
 use App\User;
 use App\Phone;
 use App\Comment;
+use App\Role;
+use App\Country;
 
 class AdminHomeController extends Controller {
 
@@ -174,9 +176,24 @@ class AdminHomeController extends Controller {
 	  exit; */
 	  
 	  // 关联：相对关联 -> 一对多
-	  $comment = Comment::find(4);
+	  /* $comment = Comment::find(4);
 	  $page = $comment->page;
 	  var_dump($page);
+	  exit; */
+	  
+	  // 关联：多对多
+	  /* $user  = User::find(4);
+	  $role = Role::find(1);
+	  $roles = $user->roles;
+	  $users = $role->users;
+	  var_dump($roles);
+	  //var_dump($users);
+	  exit; */
+	  
+	  // 关联：Has Many Through 远层一对多关联
+	  $country = Country::find(1);
+	  $counties = $country->counties;
+	  var_dump($counties);
 	  exit;
 	  
 	  $data = array(
