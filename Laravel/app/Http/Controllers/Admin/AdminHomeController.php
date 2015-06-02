@@ -12,6 +12,9 @@ use App\Phone;
 use App\Comment;
 use App\Role;
 use App\Country;
+use App\Staff;
+use App\Order;
+use App\Photo;
 
 class AdminHomeController extends Controller {
 
@@ -191,10 +194,26 @@ class AdminHomeController extends Controller {
 	  exit; */
 	  
 	  // 关联：Has Many Through 远层一对多关联
-	  $country = Country::find(1);
+	  /* $country = Country::find(1);
 	  $counties = $country->counties;
 	  var_dump($counties);
+	  exit; */
+	  
+	  // 关联：多态关联（一对一，一对多的多态关联）
+	  // 【此示例的应用场景为：员工staff和订单order都有相应的图片photo，他们的图片都存放在photos表中，用imageable_type来区分到底是员工的还是订单的图片】
+	  // 【1、参考：源码分析 - PHPHub 的 Vote 功能与 Laravel 多态数据关系 (Polymorphic Relationship)：https://phphub.org/topics/29】
+	  // 【2、注：数据库中imageable_type字段必须是类命令空间全路径，如：App\Order，不能直接写成Order，否则会提示类Order找不到】
+	  // 取得多态关联对象
+	  /* $staff = Staff::find(2);
+	  $photos = $staff->photos;
+	  echo "<pre>"; var_dump($photos); echo "</pre>"; 
+	  exit; */
+	  //取得多态关联对象的拥有者
+	  $photo = Photo::find(3);
+	  $imageable = $photo->imageable;
+	  echo "<pre>"; var_dump($imageable); echo "</pre>"; 
 	  exit;
+	  	  
 	  
 	  $data = array(
 	      'pages' => Page::all(),
