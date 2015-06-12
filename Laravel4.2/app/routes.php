@@ -35,3 +35,4 @@ Route::group ( array (
 	Route::resource ( 'articles', 'App\Controllers\Admin\ArticlesController' );
 	Route::resource ( 'pages', 'App\Controllers\Admin\PagesController' );
 } );
+
