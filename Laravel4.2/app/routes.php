@@ -29,7 +29,7 @@ Route::post ( 'admin/login', array (
 
 Route::group ( array (
 		'prefix' => 'admin',
-		'before' => 'auth.admin' 
+		'before' => 'auth.admin'
 ), function () {
 	Route::any ( '/', 'App\Controllers\Admin\PagesController@index' );
 	Route::resource ( 'articles', 'App\Controllers\Admin\ArticlesController' );

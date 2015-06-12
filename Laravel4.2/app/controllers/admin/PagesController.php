@@ -44,7 +44,7 @@ class PagesController extends \BaseController {
 			$page->user_id = Sentry::getUser ()->id;
 			$page->save ();
 			
-			Notification::success ( 'ĞÂÔöÒ³Ãæ³É¹¦£¡' );
+			Notification::success ( 'æ–°å¢é¡µé¢æˆåŠŸï¼' );
 			
 			return Redirect::route ( 'admin.pages.edit', $page->id );
 		}
@@ -60,7 +60,7 @@ class PagesController extends \BaseController {
 	 * @return Response
 	 */
 	public function show($id) {
-		return \View::make ( 'admin.pages.show' )->with ( 'page', Page::find ( $id ) )->withAuthor ( Sentry::findUserById ( Page::find ( $id )->user_id )->name );
+		return \View::make ( 'admin.pages.show' )->with ( 'page', Page::find ( $id ) )->withAuthor ( Sentry::findUserById ( Page::find ( $id )->user_id )->email );
 	}
 	
 	/**
@@ -91,7 +91,7 @@ class PagesController extends \BaseController {
 			$page->user_id = Sentry::getUser ()->id;
 			$page->save ();
 			
-			Notification::success ( '¸üĞÂÒ³Ãæ³É¹¦£¡' );
+			Notification::success ( 'æ›´æ–°é¡µé¢æˆåŠŸï¼' );
 			
 			return Redirect::route ( 'admin.pages.edit', $page->id );
 		}
@@ -110,7 +110,7 @@ class PagesController extends \BaseController {
 		$page = Page::find ( $id );
 		$page->delete ();
 		
-		Notification::success ( 'É¾³ı³É¹¦£¡' );
+		Notification::success ( "åˆ é™¤æˆåŠŸï¼ˆåˆ é™¤è®°å½•IDä¸ºï¼š($id)ï¼‰ï¼" );
 		return Redirect::route ( 'admin.pages.index' );
 	}
 }
