@@ -209,10 +209,10 @@ class AdminHomeController extends Controller {
 	  echo "<pre>"; var_dump($photos); echo "</pre>"; 
 	  exit; */
 	  //取得多态关联对象的拥有者
-	  $photo = Photo::find(3);
+	  /* $photo = Photo::find(3);
 	  $imageable = $photo->imageable;
 	  echo "<pre>"; var_dump($imageable); echo "</pre>"; 
-	  exit;
+	  exit; */
 	  	  
 	  
 	  $data = array(

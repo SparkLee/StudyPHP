@@ -60,7 +60,9 @@ class PagesController extends \BaseController {
 	 * @return Response
 	 */
 	public function show($id) {
-		return \View::make ( 'admin.pages.show' )->with ( 'page', Page::find ( $id ) )->withAuthor ( Sentry::findUserById ( Page::find ( $id )->user_id )->email );
+		$page = Page::find ( $id );
+		$comments = $page->comments;
+		return \View::make ( 'admin.pages.show' )->with ( 'page', Page::find ( $id ) )->with ( 'comments', $comments )->withAuthor ( Sentry::findUserById ( Page::find ( $id )->user_id )->email );
 	}
 	
 	/**
@@ -93,7 +95,8 @@ class PagesController extends \BaseController {
 			
 			Notification::success ( '更新页面成功！' );
 			
-			return Redirect::route ( 'admin.pages.edit', $page->id );
+			//return Redirect::route ( 'admin.pages.edit', $page->id );
+			return Redirect::route ( 'admin.pages.index' );
 		}
 		
 		return Redirect::back ()->withInput ()->withErrors ( $validation->errors );

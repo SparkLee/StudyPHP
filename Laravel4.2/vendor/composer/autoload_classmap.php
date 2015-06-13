@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Controllers\\Admin\\ArticlesController' => $baseDir . '/app/controllers/admin/ArticlesController.php',
     'App\\Controllers\\Admin\\AuthController' => $baseDir . '/app/controllers/admin/AuthController.php',
+    'App\\Controllers\\Admin\\CommentsController' => $baseDir . '/app/controllers/admin/CommentsController.php',
     'App\\Controllers\\Admin\\PagesController' => $baseDir . '/app/controllers/admin/PagesController.php',
     'App\\Services\\Validators\\ArticleValidator' => $baseDir . '/app/services/validators/ArticleValidator.php',
     'App\\Services\\Validators\\PageValidator' => $baseDir . '/app/services/validators/PageValidator.php',
@@ -27,7 +28,9 @@ return array(
     'Cartalyst\\Sentry\\Users\\UserNotActivatedException' => $vendorDir . '/cartalyst/sentry/src/Cartalyst/Sentry/Users/Exceptions.php',
     'Cartalyst\\Sentry\\Users\\UserNotFoundException' => $vendorDir . '/cartalyst/sentry/src/Cartalyst/Sentry/Users/Exceptions.php',
     'Cartalyst\\Sentry\\Users\\WrongPasswordException' => $vendorDir . '/cartalyst/sentry/src/Cartalyst/Sentry/Users/Exceptions.php',
+    'Comment' => $baseDir . '/app/models/Comment.php',
     'CreateArticlesTable' => $baseDir . '/app/database/migrations/2015_06_12_070241_create_articles_table.php',
+    'CreateCommentsTable' => $baseDir . '/app/database/migrations/2015_06_13_015752_create_comments_table.php',
     'CreatePagesTable' => $baseDir . '/app/database/migrations/2015_06_12_070316_create_pages_table.php',
     'DatabaseSeeder' => $baseDir . '/app/database/seeds/DatabaseSeeder.php',
     'HomeController' => $baseDir . '/app/controllers/HomeController.php',
