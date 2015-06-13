@@ -24,8 +24,8 @@
                     <td>
                         <a href="{{ URL::route('admin.pages.edit', $page->id) }}" class="btn btn-success btn-mini pull-left">编辑</a>
 
-                        {{ Form::open(array('route' => array('admin.pages.destroy', $page->id), 'method' => 'delete', 'data-confirm' => '你确定删除此记录吗?')) }}
-                              <button type="submit" class="btn btn-danger btn-mini">删除</button>
+                        {{ Form::open(array('route' => array('admin.pages.destroy', $page->id), 'method' => 'delete', 'data-confirm' => 'Are you sure?')) }}
+                              <button type="submit" href="{{ URL::route('admin.pages.destroy', $page->id) }}" class="btn btn-danger btn-mini">删除</button>
                         {{ Form::close() }}
                     </td>
                 </tr>
