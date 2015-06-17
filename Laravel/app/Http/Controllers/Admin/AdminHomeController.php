@@ -213,27 +213,7 @@ class AdminHomeController extends Controller {
 	  $imageable = $photo->imageable;
 	  echo "<pre>"; var_dump($imageable); echo "</pre>"; 
 	  exit; */
-
-	  // 关联：多态的多对多关联
-	  /**
-	   * 应用场景：一篇文章或一个视频可能打多个标签；同一个标签可以同时属于文章或视频。
-	   * 
-	   * 一：创建模型及相应的\database\migrations，并此目录下的相应文件中完善数据表的字段定义
-	   * 1、创建文章模型Models\Blog\BlogPost：php artisan make:model Models\Blog\BlogPost
-	   * 2、创建视频模型Models\Blog\BlogVideo：php artisan make:model Models\Blog\BlogVideo
-	   * 3、创建标签模型Models\Blog\BlogTag：php artisan make:model Models\Blog\BlogTag
-	   * 4、创建关联模型Models\Blog\BlogTaggable：php artisan make:model Models\Blog\BlogTaggable
-	   * 
-	   * 三：迁移数据库（自动创建数据表）：php artisan migrate
-	   * 注：如果要重新迁移某个已经迁移过的数据表，可以删除migrations表中相应的迁移历史记录，再执行php artisan migrate即可。
-	   *     可以通过命令php artisan migrate:status查看\database\migrations目录下哪些个数据迁移文件未曾迁移过。
-	   * 
-	   * 四：新建相应的\database\seeds并添加相应的记录数据
-	   * 
-	   * 五：填充数据表（自动填充数据表记录数据）：
-	   * 
-	   */
-	  // 【参数：http://www.golaravel.com/laravel/docs/5.0/eloquent/#relationships】
+	  	  
 	  
 	  $data = array(
 	      'pages' => Page::all(),
