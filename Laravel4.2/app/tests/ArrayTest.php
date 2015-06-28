@@ -15,14 +15,21 @@ class ArrayTest extends TestCase {
         $result = array_push($arr1, "sparklee");
         $result = array_push($arr1, "liwei"); // 将一个或多个单元压入数组的末尾（入栈）。返回处理之后数组的元素个数。
         $this->assertEquals(2, $result);
+        $this->assertEquals(2, count($arr1));
         
         $result = array_pop($arr1);
         $this->assertEquals("liwei", $result); // 将数组最后一个单元弹出（出栈）。返回 array 的最后一个值。如果 array 是空（如果不是一个数组），将会返回 NULL 。
+        $this->assertEquals(1, count($arr1));
         
         $result = array_pop($arr1);
         $this->assertEquals("sparklee", $result); 
+        $this->assertEquals(0, count($arr1));
         
         $result = array_pop($arr1);
-        $this->assertEquals(null, $result);
+        $this->assertEquals(null, $result); //
+        $this->assertEquals(array(), $arr1);
+        
+        $result = array_push($arr1, "lily");
+        $this->assertEquals(1, $result);
     }
 }

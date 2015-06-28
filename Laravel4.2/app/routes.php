@@ -14,6 +14,8 @@ Route::get ( '/', function () {
 	return View::make ( 'hello' );
 } );
 
+Route::get('/tree', array('uses' => 'App\Controllers\TreeController@index'));
+
 Route::get ( 'admin/logout', array (
 		'as' => 'admin.logout',
 		'uses' => 'App\Controllers\Admin\AuthController@getLogout' 
