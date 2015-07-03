@@ -15,6 +15,25 @@ class HomeController extends BaseController {
 	|
 	*/
 
+    public function getIndex() {
+        $data_test = array(
+                'name' => 'li',
+                'age' => 2,
+        );
+        $rules = array(
+                'name' => 'required|min:2',
+                'age' => 'required',
+                'email' => 'required|email',
+        );
+        $validator = Validator::make($data_test, $rules);
+        if ($validator->fails()) {
+            $messages = $validator->message();
+            var_dump($messages);
+        }
+        
+        return "Hello World";
+    }
+    
 	public function showWelcome()
 	{
 		return View::make('hello');

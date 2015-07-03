@@ -13,5 +13,9 @@ class ExampleTest extends TestCase {
 
 		$this->assertTrue($this->client->getResponse()->isOk());
 	}
+	
+	public function testRoute() {
+	    $this->call('get', '/home/index');
+	}
 
 }

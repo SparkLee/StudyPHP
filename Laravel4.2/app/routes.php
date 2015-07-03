@@ -13,8 +13,12 @@
 Route::get ( '/', function () {
 	return View::make ( 'hello' );
 } );
+Route::controller('/home', '\HomeController');
+Route::controller('/validator', 'ValidatorTestController');
 
 Route::get('/tree', array('uses' => 'App\Controllers\TreeController@index'));
+
+Route::controller('/user', 'App\Controllers\UserController');
 
 Route::get ( 'admin/logout', array (
 		'as' => 'admin.logout',
