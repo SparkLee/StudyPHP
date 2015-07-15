@@ -46,13 +46,16 @@ class ValidatorTestController extends BaseController {
     public function postLogin() {
         $rules = array(
                 'uname' => 'required|min:2',
-                'uage' => 'required',
+                'uage' => 'required|integer|between:0,150',
                 'uemail' => 'required|email',
         );
         
         $validator = Validator::make(Input::all(), $rules);
         if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator);
+        	$messages = $validator->messages();
+            echo "<pre>"; var_dump($messages); echo "</pre>"; exit;
+        	
+            //return Redirect::back()->withErrors($validator);
             
             //return Redirect::back()->withErrors($validator, 'login'); // 命名错误清单（未命名时为default）
         }

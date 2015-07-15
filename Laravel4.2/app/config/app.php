@@ -192,7 +192,9 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 		'Sentry'          => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
-		'Notification'    => 'Krucas\Notification\Facades\Notification'
+		'Notification'    => 'Krucas\Notification\Facades\Notification',
+		
+		'Test'          => 'GuJiTech\Libraries\Classes\Test',
 	),
 
 );
