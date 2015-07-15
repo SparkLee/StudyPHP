@@ -32,6 +32,12 @@ class HomeController extends BaseController {
     	$t->sayHello();
     }
     
+    public function getTestIocAndFacade() {
+    	//Foo::showApp(); // 通过Facade外观模式访问子系统接口
+    	
+    	App::make('foo')->showApp(); // 直接从IoC容器中访问子系统接口
+    }
+    
 	public function showWelcome()
 	{
 		return View::make('hello');

@@ -123,7 +123,11 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Cartalyst\Sentry\SentryServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
-		'Krucas\Notification\NotificationServiceProvider'
+		'Krucas\Notification\NotificationServiceProvider',
+			
+		'GuJiTech\Libraries\MyFoo\MyFooServiceProvider',
+			
+			
 
 	),
 
@@ -194,7 +198,8 @@ return array(
 		'Sentry'          => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 		'Notification'    => 'Krucas\Notification\Facades\Notification',
 		
-		'Test'          => 'GuJiTech\Libraries\Classes\Test',
+		'Test'            => 'GuJiTech\Libraries\Classes\Test',
+		'Foo'             => 'GuJiTech\Libraries\MyFoo\MyFooFacade',
 	),
 
 );
