@@ -125,6 +125,8 @@ return array(
 		'Way\Generators\GeneratorsServiceProvider',
 		'Krucas\Notification\NotificationServiceProvider',
 			
+		'Libraries\XMan\XManServiceProvider',
+			
 		'GuJiTech\Libraries\MyFoo\MyFooServiceProvider',
 			
 			
@@ -200,6 +202,11 @@ return array(
 		
 		'Test'            => 'GuJiTech\Libraries\Classes\Test',
 		'Foo'             => 'GuJiTech\Libraries\MyFoo\MyFooFacade',
+			
+		'FireXMan'        => 'Libraries\XMan\Facades\FireXMan',
+		'FlyXMan'         => 'Libraries\XMan\Facades\FlyXMan',
+		'StormXMan'       => 'Libraries\XMan\Facades\StormXMan',
+		'IronXMan'        => 'Libraries\XMan\Facades\IronXMan',
 	),
 
 );

@@ -15,6 +15,7 @@ Route::get ( '/', function () {
 } );
 
 Route::controller('/home', '\HomeController');
+Route::controller('/xman', '\XManController');
 Route::controller('/validator', 'ValidatorTestController');
 
 Route::get('/tree', array('uses' => 'App\Controllers\TreeController@index'));
